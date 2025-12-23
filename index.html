@@ -481,9 +481,11 @@
                             <div class="service-card bg-stone-50 border-2 border-forest-400 rounded-lg p-4 relative overflow-hidden">
                                 <div class="absolute top-0 right-0 bg-forest-500 text-white text-[10px] px-2 py-1 rounded-bl font-bold">NO UPFRONT COST</div>
                                 <h3 class="font-bold text-navy-900 mb-1">Pay With My Refund (Bank Product)</h3>
-                                <p class="text-sm text-stone-600 mb-2">Deduct preparation fees from your refund. <span class="font-bold text-forest-600">$78 Flat Fee</span>.</p>
-                                <div class="text-xs text-stone-500 mb-3 bg-white p-2 rounded border border-stone-200">
-                                    <span class="font-bold text-navy-800">Refund Advance Eligibility:</span> Apply for up to $6,000 within 24h of IRS acceptance (Subject to bank approval).
+                                <p class="text-sm text-stone-600 mb-2">Deduct preparation fees from your refund. <span class="font-bold text-forest-600">$82.90 Base Fee</span>.</p>
+                                <div class="text-xs text-stone-500 mb-3 bg-white p-2 rounded border border-stone-200 space-y-1">
+                                    <p><span class="font-bold text-navy-800">Refund Advance:</span> Up to <span class="font-bold">$1,000 at NO COST</span> (0% APR) after IRS acceptance. Loans up to $7,000 available (fees apply).</p>
+                                    <p class="pt-1 border-t border-stone-100"><span class="font-bold text-navy-800">Disbursement:</span> Direct Deposit, FasterMoney® Visa Card, or Check.</p>
+                                    <p class="text-[10px] italic text-stone-400 mt-1">*Full fee schedule discussed prior to signing.</p>
                                 </div>
                                 <button onclick="addPayByRefund(this)" class="w-full bg-forest-600 hover:bg-forest-700 text-white text-sm font-bold py-2 rounded transition">Add Bank Product</button>
                             </div>
@@ -737,7 +739,7 @@
             quoteItems.push({ 
                 id: 'bank_product', 
                 name: 'Pay With Refund (Bank Product)', 
-                price: 78, 
+                price: 82.90, 
                 type: 'onetime', 
                 cat: 'tax', 
                 noDiscount: true 
@@ -906,13 +908,17 @@
 
                 const el = document.createElement('div');
                 el.className = 'flex justify-between items-center bg-navy-800 p-3 rounded border border-navy-700 text-white shadow-sm';
+                
+                // Show decimals only if needed
+                const displayPrice = finalPrice % 1 === 0 ? Math.round(finalPrice) : finalPrice.toFixed(2);
+
                 el.innerHTML = `
                     <div class="flex-grow">
                         <div class="text-xs font-bold">${item.name}</div>
                         ${isDiscounted ? '<div class="text-[10px] text-forest-400">Discount Applied</div>' : ''}
                     </div>
                     <div class="flex items-center gap-3">
-                        <span class="text-sm font-mono font-bold">$${Math.round(finalPrice)}</span>
+                        <span class="text-sm font-mono font-bold">$${displayPrice}</span>
                         <button onclick="removeFromQuote('${item.id}')" class="text-stone-400 hover:text-red-400 transition" title="Remove">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -923,12 +929,15 @@
             });
 
             // Update Desktop Totals
-            document.getElementById('total-onetime').innerText = `$${Math.round(tOne)}`;
-            document.getElementById('total-monthly').innerText = `$${Math.round(tMo)}`;
+            const displayOne = tOne % 1 === 0 ? Math.round(tOne) : tOne.toFixed(2);
+            const displayMo = tMo % 1 === 0 ? Math.round(tMo) : tMo.toFixed(2);
+
+            document.getElementById('total-onetime').innerText = `$${displayOne}`;
+            document.getElementById('total-monthly').innerText = `$${displayMo}`;
             
             // Update Mobile Totals
-            document.getElementById('mobile-onetime').innerHTML = `$${Math.round(tOne)} <span class="text-xs font-normal text-stone-400">1x</span>`;
-            document.getElementById('mobile-monthly').innerHTML = `$${Math.round(tMo)} <span class="text-xs font-normal text-stone-400">/mo</span>`;
+            document.getElementById('mobile-onetime').innerHTML = `$${displayOne} <span class="text-xs font-normal text-stone-400">1x</span>`;
+            document.getElementById('mobile-monthly').innerHTML = `$${displayMo} <span class="text-xs font-normal text-stone-400">/mo</span>`;
             
             updateChart(cTax, cBook, cOther);
         }
@@ -960,11 +969,16 @@
 
             quoteItems.forEach(i => {
                 const price = calculateItemPrice(i, rules);
-                body += `- ${i.name}: $${Math.round(price)} (${i.type})\n`;
+                const displayPrice = price % 1 === 0 ? Math.round(price) : price.toFixed(2);
+                
+                body += `- ${i.name}: $${displayPrice} (${i.type})\n`;
                 if(i.type==='monthly') t2+=price; else t1+=price;
             });
 
-            body += `\nEst One-Time: $${Math.round(t1)}\nEst Monthly: $${Math.round(t2)}`;
+            const displayT1 = t1 % 1 === 0 ? Math.round(t1) : t1.toFixed(2);
+            const displayT2 = t2 % 1 === 0 ? Math.round(t2) : t2.toFixed(2);
+
+            body += `\nEst One-Time: $${displayT1}\nEst Monthly: $${displayT2}`;
             if (currentDiscountCode !== 'none') body += `\nCode: ${currentDiscountCode}`;
             
             const sub = encodeURIComponent("Quote Request");
