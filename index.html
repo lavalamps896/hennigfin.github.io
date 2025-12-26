@@ -430,7 +430,7 @@
                             <h3 class="text-xs font-bold text-stone-400 uppercase tracking-wider mb-3 ml-1">Common Add-ons</h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="service-card bg-white border border-stone-200 rounded-lg p-4">
-                                    <h3 class="font-bold text-navy-900 text-sm mb-1">State Tax Returns</h3>
+                                    <h3 class="font-bold text-navy-900 text-sm mb-1">Additional State Returns</h3>
                                     <select id="sel_states" class="w-full text-sm border-stone-300 rounded p-2 bg-stone-50 mb-3">
                                         <option value="50">1 State ($50)</option>
                                         <option value="100">2 States ($100)</option>
@@ -448,7 +448,7 @@
                                         <option value="600">Multi-Member / Cleanup ($600)</option>
                                     </select>
                                     <p class="text-[10px] text-stone-500 mb-3 leading-tight italic">
-                                        *Pricing depends on organization of books & complexity.
+                                        *You provide a total summary (spreadsheet) of income & expenses. No receipt sorting.
                                     </p>
                                     <button onclick="addScheduleC(this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add</button>
                                 </div>
@@ -485,25 +485,26 @@
                                 <div class="text-xs text-stone-500 mb-3 bg-white p-2 rounded border border-stone-200 space-y-1">
                                     <p><span class="font-bold text-navy-800">Refund Advance:</span> Up to <span class="font-bold">$1,000 at NO COST</span> (0% APR) after IRS acceptance. Loans up to $7,000 available (fees apply).</p>
                                     <p class="pt-1 border-t border-stone-100"><span class="font-bold text-navy-800">Disbursement:</span> Direct Deposit, FasterMoney® Visa Card, or Check.</p>
-                                    <p class="text-[10px] italic text-stone-400 mt-1">*Full fee schedule discussed prior to signing.</p>
+                                    <p class="text-[10px] italic text-stone-400 mt-1">*Fees are deducted from the refund, reducing the total amount deposited. Full fee schedule discussed prior to signing.</p>
                                 </div>
                                 <button onclick="addPayByRefund(this)" class="w-full bg-forest-600 hover:bg-forest-700 text-white text-sm font-bold py-2 rounded transition">Add Bank Product</button>
                             </div>
                         </div>
+
+                        <!-- Tax Planning Session (Moved to below Bank Product) -->
+                        <div class="service-card bg-white border border-stone-200 rounded-lg p-4 flex flex-col justify-between mt-2 mb-2">
+                            <div>
+                                <h3 class="font-bold text-navy-900 mb-1">Tax Planning Session</h3>
+                                <p class="text-sm text-stone-500 mb-3">Dedicated consultation for proactive strategies.</p>
+                            </div>
+                            <button onclick="addDirectItem('t7', 'Tax Planning Session', 200, 'onetime', 'tax', this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add ($200)</button>
+                        </div>
                         
                         <h3 class="text-xs font-bold text-stone-400 uppercase tracking-wider mt-2 mb-1 ml-1">Partnerships & S-Corps</h3>
-                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                             <div class="service-card bg-white border border-stone-200 rounded-lg p-4">
-                                <h3 class="font-bold text-navy-900 mb-1">Partnership (1065)</h3>
-                                <p class="text-xs text-stone-500 mb-3">Fixed Fee: $800. Includes up to 3 partners, <$1.5M Rev.</p>
-                                <button onclick="addDirectItem('t4_part', 'Partnership Tax (1065)', 800, 'onetime', 'tax', this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add ($800)</button>
-                            </div>
-                            
-                            <div class="service-card bg-white border border-stone-200 rounded-lg p-4">
-                                <h3 class="font-bold text-navy-900 mb-1">S Corp (1120-S)</h3>
-                                <p class="text-xs text-stone-500 mb-3">Fixed Fee: $800. Includes <$1.5M Rev, Clean Books.</p>
-                                <button onclick="addDirectItem('t4_scorp', 'S Corp Tax (1120-S)', 800, 'onetime', 'tax', this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add ($800)</button>
-                            </div>
+                         <div class="service-card bg-white border border-stone-200 rounded-lg p-4">
+                            <h3 class="font-bold text-navy-900 mb-1">Partnership & S-Corp Inquiry</h3>
+                            <p class="text-xs text-stone-500 mb-3">Includes initial review of books & structure. Fee applied to final bill if you proceed.</p>
+                            <button onclick="addDirectItem('t_entity_review', 'Entity Initial Review', 100, 'onetime', 'tax', this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add Initial Review ($100)</button>
                         </div>
                     </div>
                 </div>`;
@@ -821,7 +822,7 @@
         }
 
         // Wrapper wrappers
-        function addStates(btn) { addSelectBasedItem('sel_states', 't_state', 'State Returns', 'tax'); }
+        function addStates(btn) { addSelectBasedItem('sel_states', 't_state', 'Additional State', 'tax'); }
         function add1099B(btn) { addSelectBasedItem('sel_1099b', 't_1099b', 'Capital Gains (Sch D)', 'tax'); }
         function addRentals(btn) { addSelectBasedItem('sel_rentals', 't_rent', 'Rentals', 'tax'); }
         function addCleanup(btn) { addSelectBasedItem('sel_cleanup', 'b_clean', 'Initial Cleanup', 'bookkeeping'); }
