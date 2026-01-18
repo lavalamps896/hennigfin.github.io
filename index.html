@@ -3,16 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hennig Financial LLC | Interactive Service Explorer</title>
+    <title>Hennig Financial LLC | Modern Tax & Bookkeeping</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <!-- Chosen Palette: Warm Professional -->
-
-    <meta name="robots" content="noindex">
-
     <script>
         tailwind.config = {
             theme: {
@@ -30,979 +25,221 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .chart-container { position: relative; width: 100%; max-width: 500px; margin: 0 auto; height: 300px; max-height: 300px; }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #999; }
-        .tab-active { border-left: 4px solid #1e3a8a; background-color: #f5f5f4; color: #1e3a8a; font-weight: 700; }
-        .service-card { transition: all 0.2s ease-in-out; }
-        .service-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-        .accordion-content.open { max-height: 1000px; transition: max-height 0.5s ease-in; }
-        
-        /* Toast Animation */
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        .toast-enter { animation: slideIn 0.3s ease-out forwards; }
+        .step-number { font-feature-settings: "tnum"; font-variant-numeric: tabular-nums; }
     </style>
 </head>
-<body class="bg-stone-50 text-stone-800 pb-24 lg:pb-0">
+<body class="bg-stone-50 text-stone-800 flex flex-col min-h-screen">
 
     <!-- Navigation -->
     <header class="bg-navy-900 text-stone-50 shadow-md relative z-10">
         <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center gap-4">
-                
-                <!-- LOGO SECTION -->
                 <img src="logo.png" alt="Hennig Financial Logo" class="h-14 w-auto object-contain">
-                
                 <div>
                     <h1 class="text-2xl font-bold tracking-tight text-white">Hennig Financial LLC</h1>
                     <p class="text-sm text-stone-300">Modern Tax, Bookkeeping & Payroll Support</p>
                 </div>
             </div>
-            <div class="mt-4 md:mt-0 flex items-center gap-4 text-sm">
-                <button onclick="scrollToSection('services')" class="text-stone-300 hover:text-forest-400 transition font-medium">Services</button>
-                <a href="about.html" class="text-stone-300 hover:text-forest-400 transition font-medium">About</a>
-                <a href="resources.html" class="text-stone-300 hover:text-forest-400 transition font-medium">FAQ & Resources</a>
-                <button onclick="document.getElementById('scope-accordion-content').classList.add('open')" class="bg-forest-600 hover:bg-forest-700 text-white px-4 py-2 rounded font-semibold transition shadow-sm">Get Started</button>
+            <div class="mt-4 md:mt-0 flex items-center gap-6 text-sm font-medium">
+                <a href="#how-it-works" class="text-stone-300 hover:text-forest-400 transition">How It Works</a>
+                <a href="#pricing" class="text-stone-300 hover:text-forest-400 transition">Pricing</a>
+                <a href="about.html" class="text-stone-300 hover:text-forest-400 transition">About</a>
+                <a href="resources.html" class="text-stone-300 hover:text-forest-400 transition">Resources</a>
+                <a href="mailto:ron@hennigfinancial.com" class="bg-forest-600 hover:bg-forest-700 text-white px-5 py-2 rounded transition shadow-md">Get Started</a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Grid -->
-    <main class="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8 relative">
-
-        <!-- Intro -->
-        <section class="lg:col-span-12 mb-2 bg-white p-6 rounded-lg shadow-sm border-l-4 border-navy-800">
-            <h2 class="text-xl font-bold text-navy-800 mb-2">Tax, Bookkeeping & Payroll for Small Businesses</h2>
-            <p class="text-stone-600 mb-4">
-                Flat-rate, transparent financial services designed to reduce stress and keep your finances on track year-round.
+    <!-- Hero Section -->
+    <section class="bg-white border-b border-stone-200">
+        <div class="container mx-auto px-4 py-16 md:py-24 max-w-4xl text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-navy-900 mb-6 leading-tight">
+                Tax Prep Made Simple.
+            </h2>
+            <p class="text-xl text-stone-600 mb-8 leading-relaxed max-w-2xl mx-auto">
+                Expert preparation, transparent flat-rate pricing, and a secure digital process designed for modern life.
             </p>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-semibold border border-stone-200">Tax Preparation</span>
-                <span class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-semibold border border-stone-200">Bookkeeping</span>
-                <span class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full font-semibold border border-stone-200">Payroll & HR Support</span>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="mailto:ron@hennigfinancial.com?subject=New Client Inquiry" class="bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-8 rounded shadow-lg transition transform hover:-translate-y-0.5">
+                    Book Onboarding Call
+                </a>
+                <a href="#pricing" class="bg-white border-2 border-stone-200 hover:border-navy-900 text-navy-900 font-bold py-3 px-8 rounded transition">
+                    View Pricing
+                </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Left Column: Navigation -->
-        <aside class="lg:col-span-2 lg:block" id="services">
-            <div class="bg-white rounded-lg shadow-sm p-4 sticky top-4 border border-stone-200">
-                <h3 class="text-xs font-bold text-stone-400 uppercase tracking-wider mb-4">Explore Services</h3>
-                <nav class="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 scrollbar-hide">
-                    <button onclick="switchTab('tax')" id="btn-tax" class="tab-btn text-left px-4 py-3 rounded-r-md rounded-l-none border-l-4 border-transparent hover:bg-stone-50 text-sm font-medium transition whitespace-nowrap">Tax Preparation</button>
-                    <button onclick="switchTab('bookkeeping')" id="btn-bookkeeping" class="tab-btn text-left px-4 py-3 rounded-r-md rounded-l-none border-l-4 border-transparent hover:bg-stone-50 text-sm font-medium transition whitespace-nowrap">Bookkeeping</button>
-                    <button onclick="switchTab('payroll')" id="btn-payroll" class="tab-btn text-left px-4 py-3 rounded-r-md rounded-l-none border-l-4 border-transparent hover:bg-stone-50 text-sm font-medium transition whitespace-nowrap">Payroll & HR</button>
-                    <button onclick="switchTab('consulting')" id="btn-consulting" class="tab-btn text-left px-4 py-3 rounded-r-md rounded-l-none border-l-4 border-transparent hover:bg-stone-50 text-sm font-medium transition whitespace-nowrap">Consulting</button>
-                </nav>
+    <!-- Process Section -->
+    <section id="how-it-works" class="py-16 bg-stone-50">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-bold text-forest-600 tracking-widest uppercase mb-2">The Process</h2>
+                <h3 class="text-3xl font-bold text-navy-900">Simple, Secure, and Digital.</h3>
             </div>
-        </aside>
 
-        <!-- Center Column: Dynamic Content -->
-        <section class="lg:col-span-6 space-y-6 min-h-[600px]">
-            <div id="content-area">
-                <!-- Content injected via JS -->
-            </div>
-        </section>
-
-        <!-- Right Column: Quote Estimator -->
-        <aside class="lg:col-span-4" id="quote-section">
-            <div class="bg-navy-900 text-stone-100 rounded-lg shadow-lg p-6 sticky top-4">
-                <div class="flex justify-between items-center mb-4 pb-4 border-b border-navy-700">
-                    <h3 class="text-lg font-bold flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-forest-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-                        </svg>
-                        Your Estimate
-                    </h3>
-                    <button onclick="confirmResetQuote()" class="text-xs text-stone-400 hover:text-white underline decoration-dashed">Reset Cart</button>
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="relative p-6 bg-white rounded-lg shadow-sm border border-stone-100">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md step-number">1</div>
+                    <h4 class="text-lg font-bold text-navy-900 mb-2 mt-2">Connect & Quote</h4>
+                    <p class="text-sm text-stone-600">Reach out for a quick quote. We'll schedule a brief 15-minute onboarding call to confirm your needs and setup.</p>
                 </div>
 
-                <!-- Service Scope Accordion -->
-                <div class="bg-white text-stone-800 rounded-lg shadow-inner mb-6 overflow-hidden">
-                    <button id="accordion-toggle" onclick="toggleAccordion()" class="w-full text-left p-3 text-sm font-semibold flex justify-between items-center bg-stone-100 hover:bg-stone-200 transition">
-                        <span>Before You Get Started</span>
-                        <span id="accordion-icon" class="transition transform rotate-0 text-navy-800">&#9660;</span>
-                    </button>
-                    <div id="scope-accordion-content" class="accordion-content bg-stone-50">
-                        <div class="p-4 text-xs space-y-3 border-t border-stone-200">
-                            <p class="font-bold text-navy-900">We specialize in straightforward tax & accounting. We do not serve:</p>
-                            <ul class="list-disc pl-5 space-y-1 text-stone-600">
-                                <li>Revenue over $5 million</li>
-                                <li>Audited/Reviewed financial statements</li>
-                                <li>Private equity/VC backed businesses</li>
-                                <li>Complex international tax</li>
-                                <li>Ongoing IRS litigation</li>
-                            </ul>
-                            <div class="mt-4 pt-3 border-t border-stone-200">
-                                <label class="flex items-start cursor-pointer group">
-                                    <input type="checkbox" id="scope-confirm" class="mt-1 rounded text-forest-600 focus:ring-forest-500" onchange="updateButtonState()">
-                                    <span class="ml-2 text-stone-700 group-hover:text-navy-900 transition">I confirm my needs fall within the service scope.</span>
-                                </label>
-                            </div>
+                <!-- Step 2 -->
+                <div class="relative p-6 bg-white rounded-lg shadow-sm border border-stone-100">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md step-number">2</div>
+                    <h4 class="text-lg font-bold text-navy-900 mb-2 mt-2">Secure Upload</h4>
+                    <p class="text-sm text-stone-600">You'll receive access to our secure client app. Fill out simple checklists and snap photos of your docs to upload instantly.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative p-6 bg-white rounded-lg shadow-sm border border-stone-100">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md step-number">3</div>
+                    <h4 class="text-lg font-bold text-navy-900 mb-2 mt-2">Expert Prep</h4>
+                    <p class="text-sm text-stone-600">We prepare your return, asking follow-up questions via the portal. No need to drive to an office.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative p-6 bg-white rounded-lg shadow-sm border border-stone-100">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-forest-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md step-number">4</div>
+                    <h4 class="text-lg font-bold text-navy-900 mb-2 mt-2">Review & Sign</h4>
+                    <p class="text-sm text-stone-600">Receive a draft to review. Digitally sign from your phone. Choose to pay upfront or deduct fees from your refund.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-bold text-forest-600 tracking-widest uppercase mb-2">Transparent Pricing</h2>
+                <h3 class="text-3xl font-bold text-navy-900">Know What You Pay.</h3>
+                <p class="text-stone-500 mt-2">Simple flat rates for most common situations.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                
+                <!-- W-2 Express -->
+                <div class="border-2 border-stone-100 rounded-xl p-6 hover:border-forest-400 transition bg-stone-50">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h4 class="text-xl font-bold text-navy-900">W-2 Express</h4>
+                            <p class="text-xs text-stone-500 font-semibold uppercase tracking-wide mt-1">Simple Filing</p>
+                        </div>
+                        <div class="text-2xl font-bold text-navy-900">$150</div>
+                    </div>
+                    <ul class="text-sm text-stone-600 space-y-2 mb-6">
+                        <li class="flex gap-2">
+                            <span class="text-forest-600 font-bold">✓</span> Federal + 1 State Return Included
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-forest-600 font-bold">✓</span> Standard Deduction (No Itemizing)
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-forest-600 font-bold">✓</span> W-2, Unemployment, Interest & Dividends
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-forest-600 font-bold">✓</span> Includes Dependents & Student Loan Interest
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Standard -->
+                <div class="border-2 border-navy-900 rounded-xl p-6 relative shadow-lg">
+                    <div class="absolute top-0 right-0 bg-navy-900 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h4 class="text-xl font-bold text-navy-900">Standard Return</h4>
+                            <p class="text-xs text-stone-500 font-semibold uppercase tracking-wide mt-1">Homeowners & Families</p>
+                        </div>
+                        <div class="text-2xl font-bold text-navy-900">$225</div>
+                    </div>
+                    <ul class="text-sm text-stone-600 space-y-2 mb-6">
+                        <li class="flex gap-2">
+                            <span class="text-forest-600 font-bold">✓</span> Federal + 1 State Return Included
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-forest-600 font-bold">✓</span> Itemized Deductions (Mortgage, Taxes)
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-forest-600 font-bold">✓</span> Education Credits & HSA Distributions
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-forest-600 font-bold">✓</span> Investment Income & K-1s
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Add-ons Grid -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <!-- Business -->
+                <div class="border border-stone-200 rounded-lg p-5">
+                    <h5 class="font-bold text-navy-900 mb-2">Self-Employed / Business</h5>
+                    <p class="text-sm text-stone-600 mb-2">Schedule C preparation for freelancers or LLCs.</p>
+                    <div class="text-lg font-bold text-forest-600">Starts at +$200</div>
+                    <p class="text-[10px] text-stone-400 mt-1 italic">*Price depends on record organization.</p>
+                </div>
+
+                <!-- Rentals -->
+                <div class="border border-stone-200 rounded-lg p-5">
+                    <h5 class="font-bold text-navy-900 mb-2">Rental Properties</h5>
+                    <p class="text-sm text-stone-600 mb-2">Schedule E preparation for landlords.</p>
+                    <div class="text-lg font-bold text-forest-600">+$125 <span class="text-xs font-normal text-stone-500">per property</span></div>
+                </div>
+
+                <!-- States -->
+                <div class="border border-stone-200 rounded-lg p-5">
+                    <h5 class="font-bold text-navy-900 mb-2">Additional States</h5>
+                    <p class="text-sm text-stone-600 mb-2">For multi-state workers or moves.</p>
+                    <div class="text-lg font-bold text-forest-600">+$50 <span class="text-xs font-normal text-stone-500">per state</span></div>
+                </div>
+            </div>
+
+            <!-- Bank Product Feature -->
+            <div class="bg-navy-900 rounded-xl p-8 text-white relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-forest-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+                
+                <div class="md:flex justify-between items-center gap-8 relative z-10">
+                    <div class="mb-6 md:mb-0">
+                        <div class="inline-block bg-forest-600 text-[10px] font-bold px-2 py-1 rounded mb-3">PAYMENT OPTION</div>
+                        <h3 class="text-2xl font-bold mb-2">Pay With Your Refund</h3>
+                        <p class="text-stone-300 text-sm max-w-lg">
+                            Don't want to pay upfront? We offer a Bank Product service that allows you to deduct our fees directly from your refund.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-sm text-stone-200">
+                            <li>• <strong>$0 Upfront Cost</strong> (Fees deducted later)</li>
+                            <li>• <strong>Refund Advance:</strong> Up to $1,000 at NO COST (0% APR) upon acceptance</li>
+                            <li>• <strong>Bank Product Fee:</strong> $82.90 flat fee</li>
+                        </ul>
+                        <p class="text-[10px] text-stone-500 mt-4 italic">*Subject to bank approval. Larger interest-bearing loans up to $7,000 available.</p>
+                    </div>
+                    <div>
+                        <div class="text-center bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10">
+                            <span class="block text-3xl font-bold text-forest-400">$0</span>
+                            <span class="text-xs text-stone-300">Due Today</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="mb-4">
-                    <label class="block text-xs text-stone-400 mb-1">Discount Code</label>
-                    <div class="flex gap-2">
-                        <input type="text" id="discount-input" placeholder="CODE" class="flex-grow bg-navy-800 border border-navy-700 text-stone-100 text-sm rounded px-3 py-2 focus:outline-none focus:border-forest-600 uppercase tracking-widest placeholder-navy-600">
-                        <button onclick="applyDiscountCode()" class="bg-forest-600 hover:bg-forest-700 text-white text-xs font-bold px-3 py-2 rounded transition">APPLY</button>
-                        <button onclick="clearDiscountCode()" class="bg-stone-600 hover:bg-stone-700 text-white text-xs font-bold px-3 py-2 rounded transition" title="Clear Code">&times;</button>
-                    </div>
-                    <p id="discount-feedback" class="text-xs mt-1 min-h-[1.25em]"></p>
-                </div>
-
-                <div class="mb-6">
-                    <label class="block text-xs text-stone-400 mb-1">Referred by (Name)</label>
-                    <input type="text" id="referral-input" placeholder="e.g. John Doe" class="w-full bg-navy-800 border border-navy-700 text-stone-100 text-sm rounded px-3 py-2 focus:outline-none focus:border-forest-600 placeholder-navy-600">
-                </div>
-
-                <div id="selected-items" class="space-y-2 mb-6 max-h-60 overflow-y-auto pr-2 text-sm custom-scrollbar">
-                    <div class="text-stone-500 italic text-center py-6 border-2 border-dashed border-navy-800 rounded">
-                        Add services to build your quote.
-                    </div>
-                </div>
-
-                <div class="border-t border-navy-700 pt-4 space-y-2 bg-navy-800/50 p-3 rounded">
-                    <div class="flex justify-between items-center">
-                        <span id="total-onetime-label" class="text-stone-300 text-sm">One-Time / Annual</span>
-                        <span id="total-onetime" class="font-bold text-xl">$0</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span id="total-monthly-label" class="text-stone-300 text-sm">Monthly Recurring</span>
-                        <span id="total-monthly" class="font-bold text-xl text-forest-400">$0<span class="text-xs text-stone-400 font-normal">/mo</span></span>
-                    </div>
-                </div>
-
-                <div class="mt-6 pt-6 border-t border-navy-700">
-                    <h4 class="text-xs font-bold text-stone-400 mb-2 uppercase text-center">Cost Composition</h4>
-                    <div class="chart-container" style="height: 180px;">
-                        <canvas id="quoteChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="mt-6 space-y-3">
-                    <button onclick="requestQuote('default')" id="request-package-btn" disabled class="w-full bg-stone-600 cursor-not-allowed text-stone-400 font-bold py-3 rounded transition shadow-md flex justify-center items-center gap-2">
-                        <span>Confirm Scope First</span>
-                    </button>
-                    
-                    <button onclick="requestQuoteGmailOnly()" id="request-gmail-btn" disabled class="w-full text-xs text-stone-500 flex items-center justify-center gap-1 hover:text-stone-300 transition cursor-not-allowed">
-                        Use Gmail Web Interface
-                    </button>
-                </div>
             </div>
-        </aside>
 
-    </main>
-
-    <!-- Mobile Sticky Footer for Quote Totals -->
-    <div class="lg:hidden fixed bottom-0 left-0 w-full bg-navy-900 border-t border-navy-700 p-4 z-40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] flex justify-between items-center">
-        <div>
-            <div class="text-[10px] text-stone-400 uppercase">Total Estimate</div>
-            <div class="flex gap-3 items-baseline">
-                <span class="text-white font-bold" id="mobile-onetime">$0 <span class="text-xs font-normal text-stone-400">1x</span></span>
-                <span class="text-forest-400 font-bold" id="mobile-monthly">$0 <span class="text-xs font-normal text-stone-400">/mo</span></span>
-            </div>
         </div>
-        <button onclick="scrollToSection('quote-section')" class="bg-forest-600 text-white px-4 py-2 rounded text-sm font-bold shadow-lg">View Quote</button>
-    </div>
-
-    <!-- Toast Notification Container -->
-    <div id="toast-container" class="fixed bottom-20 right-4 lg:bottom-4 lg:right-4 z-50 flex flex-col gap-2 pointer-events-none"></div>
-
-    <!-- Custom Modal -->
-    <div id="custom-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-lg shadow-2xl max-w-sm w-full p-6 animate-fade-in">
-            <h3 id="modal-title" class="text-lg font-bold text-navy-900 mb-2">Notice</h3>
-            <p id="modal-message" class="text-sm text-stone-600 mb-6">Message goes here.</p>
-            <div class="flex justify-end gap-3" id="modal-actions">
-                <button onclick="closeModal()" class="px-4 py-2 bg-stone-200 hover:bg-stone-300 text-stone-800 rounded text-sm font-bold">Close</button>
-            </div>
-        </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-navy-950 text-stone-400 py-8 lg:pb-8 pb-32"> <!-- Extra padding for mobile footer -->
+    <footer id="contact" class="bg-navy-950 text-stone-400 py-12 mt-auto border-t border-navy-900">
         <div class="container mx-auto px-4 text-center">
-            <h3 class="text-white font-bold text-lg mb-2">Hennig Financial LLC</h3>
-            <div class="max-w-3xl mx-auto space-y-4 text-xs text-stone-500 mt-6 border-t border-navy-800 pt-6">
+            <h3 class="text-white font-bold text-xl mb-4">Hennig Financial LLC</h3>
+            <p class="text-sm mb-6">Ready to get started? <a href="mailto:ron@hennigfinancial.com" class="text-forest-400 hover:text-forest-300 underline">Email us</a> to book your 15-minute onboarding.</p>
+            
+            <div class="max-w-3xl mx-auto space-y-4 text-xs text-stone-500 mt-8 pt-8 border-t border-navy-800">
                 <p>Hennig Financial LLC is not a CPA firm and is not a law firm. We do not provide legal services, audit services, or unrestricted tax representation.</p>
+                <p>&copy; 2025 Hennig Financial LLC. All rights reserved.</p>
             </div>
-            <p class="text-xs mt-6">&copy; 2025 Hennig Financial LLC. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Logic -->
-    <script>
-        // --- Utilities ---
-        function scrollToSection(id) {
-            const element = document.getElementById(id);
-            if (element) { 
-                element.scrollIntoView({ behavior: 'smooth' }); 
-            }
-        }
-
-        function showToast(message, type = 'success') {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            const bgClass = type === 'success' ? 'bg-navy-800 border-l-4 border-forest-500' : 'bg-red-800 border-l-4 border-red-500';
-            
-            toast.className = `toast-enter pointer-events-auto ${bgClass} text-white px-4 py-3 rounded shadow-lg flex items-center gap-3 min-w-[200px]`;
-            toast.innerHTML = `
-                <span class="text-lg">${type === 'success' ? '✓' : '⚠'}</span>
-                <span class="text-sm font-medium">${message}</span>
-            `;
-            
-            container.appendChild(toast);
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateY(10px)';
-                setTimeout(() => toast.remove(), 300);
-            }, 3000);
-        }
-
-        // --- Modal System ---
-        let modalCallback = null;
-        function showModal(title, message, isConfirm = false, onConfirm = null) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-message').innerText = message;
-            const actions = document.getElementById('modal-actions');
-            
-            if (isConfirm) {
-                modalCallback = onConfirm;
-                actions.innerHTML = `
-                    <button onclick="closeModal()" class="px-4 py-2 bg-stone-200 hover:bg-stone-300 text-stone-800 rounded text-sm font-bold transition">Cancel</button>
-                    <button onclick="confirmModalAction()" class="px-4 py-2 bg-forest-600 hover:bg-forest-700 text-white rounded text-sm font-bold transition">Confirm</button>
-                `;
-            } else {
-                actions.innerHTML = `<button onclick="closeModal()" class="px-4 py-2 bg-navy-800 hover:bg-navy-900 text-white rounded text-sm font-bold transition">Okay</button>`;
-            }
-            
-            document.getElementById('custom-modal').classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('custom-modal').classList.add('hidden');
-            modalCallback = null;
-        }
-
-        function confirmModalAction() {
-            if (modalCallback) modalCallback();
-            closeModal();
-        }
-
-        function confirmResetQuote() {
-            if (quoteItems.length === 0) return;
-            showModal("Reset Quote?", "Are you sure you want to clear all items from your estimate?", true, resetQuote);
-        }
-
-        // --- Data & State ---
-        const discountRules = {
-            'none': { tax: 0, book_all: 0, book_mo_cap: false, all: 0, privateDesc: "Standard Rates", publicDesc: "" },
-            'FOUNDERS2026': { tax: 0.15, book_all: 0.15, book_mo_cap: true, all: 0, privateDesc: "Founders Rate: 15% off tax/bookkeeping (3mo).", publicDesc: "" },
-            'PRIDE15': { tax: 0.15, book_all: 0, book_mo_cap: false, all: 0, privateDesc: "LGBTQ+ Discount: 15% off tax.", publicDesc: "" },
-            'DISABILITY': { tax: 0.15, book_all: 0, book_mo_cap: false, all: 0, privateDesc: "Disability Community Discount: 15% off tax.", publicDesc: "" },
-            'VETERANS': { tax: 0.15, book_all: 0, book_mo_cap: false, all: 0, privateDesc: "Veteran Discount: 15% off tax.", publicDesc: "" },
-            'WOMENOWNED': { tax: 0.15, book_all: 0, book_mo_cap: false, all: 0, privateDesc: "Women-Owned Discount: 15% off tax.", publicDesc: "" },
-            'HENNIGFAM': { tax: 0, book_all: 0, book_mo_cap: false, all: 0.25, privateDesc: "Family Discount: 25% off all.", publicDesc: "" },
-            'LOCALBIZ': { tax: 0.10, book_all: 0.10, book_mo_cap: true, all: 0, privateDesc: "Local Biz: 10% off.", publicDesc: "" },
-            'TRUSTED26': { tax: 0.15, book_all: 0.15, book_mo_cap: true, consulting_flat: 50, all: 0, privateDesc: "Referral Rate: 15% Tax/Book + $50 off Consulting.", publicDesc: "" }
-        };
-
-        let currentTab = 'tax';
-        let quoteItems = [];
-        let currentDiscountCode = 'none';
-        let quoteChart = null;
-
-        function toggleAccordion() {
-            const content = document.getElementById('scope-accordion-content');
-            const icon = document.getElementById('accordion-icon');
-            content.classList.toggle('open');
-            icon.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
-        }
-
-        function updateButtonState() {
-            const isConfirmed = document.getElementById('scope-confirm').checked;
-            const defaultBtn = document.getElementById('request-package-btn');
-            const gmailBtn = document.getElementById('request-gmail-btn');
-            
-            if (isConfirmed) {
-                defaultBtn.removeAttribute('disabled');
-                defaultBtn.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    Send Quote Request
-                `;
-                defaultBtn.className = "w-full bg-forest-600 hover:bg-forest-700 text-white font-bold py-3 rounded transition shadow-md flex justify-center items-center gap-2";
-                
-                gmailBtn.removeAttribute('disabled');
-                gmailBtn.className = "w-full text-xs text-stone-500 flex items-center justify-center gap-1 hover:text-navy-800 transition underline decoration-dotted";
-            } else {
-                defaultBtn.setAttribute('disabled', 'true');
-                defaultBtn.innerText = "Confirm Scope to Enable";
-                defaultBtn.className = "w-full bg-stone-200 cursor-not-allowed text-stone-400 font-bold py-3 rounded flex justify-center items-center gap-2";
-                
-                gmailBtn.setAttribute('disabled', 'true');
-                gmailBtn.className = "w-full text-xs text-stone-300 flex items-center justify-center gap-1 cursor-not-allowed";
-            }
-        }
-
-        function switchTab(tabId) {
-            currentTab = tabId;
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('tab-active', 'bg-stone-50');
-                if(btn.id === `btn-${tabId}`) btn.classList.add('tab-active');
-            });
-            renderContent(tabId);
-            // Smooth scroll to top of content area on mobile
-            if (window.innerWidth < 1024) {
-                const contentArea = document.getElementById('content-area');
-                const offset = 100;
-                const elementPosition = contentArea.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - offset;
-                window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-            }
-        }
-
-        function renderContent(tabId) {
-            const container = document.getElementById('content-area');
-            container.style.opacity = '0';
-            setTimeout(() => {
-                if (tabId === 'tax') renderTaxTab(container);
-                else if (tabId === 'bookkeeping') renderBookkeepingTab(container);
-                else if (tabId === 'payroll') renderPayrollTab(container);
-                else if (tabId === 'consulting') renderConsultingTab(container);
-                container.style.opacity = '1';
-                container.style.transition = 'opacity 0.3s ease-in';
-            }, 100);
-        }
-
-        // --- Render Functions (Simplified for brevity, same structure) ---
-        function renderTaxTab(container) {
-            container.innerHTML = `
-                <div class="bg-white rounded-lg shadow-sm p-6">
-                    <h2 class="text-2xl font-bold text-navy-900 mb-2">Tax Preparation</h2>
-                    <p class="text-stone-600 mb-6 border-b border-stone-200 pb-4">Accurate, affordable, and transparent tax preparation.</p>
-                    <div class="grid grid-cols-1 gap-4">
-                        
-                        <!-- NEW W-2 EXPRESS TIER -->
-                        <div class="service-card bg-white border-2 border-forest-500 rounded-lg p-4 relative overflow-hidden shadow-md">
-                             <div class="absolute top-0 right-0 bg-forest-500 text-white text-[10px] px-2 py-1 rounded-bl font-bold">W-2 ONLY</div>
-                            <h3 class="font-bold text-navy-900 mb-2">W-2 Express Return</h3>
-                            <p class="text-sm text-stone-500 mb-3">Base Price: $150</p>
-                            <div class="bg-stone-50 p-3 rounded mb-3 text-xs text-stone-600">
-                                <ul class="list-disc pl-4 mt-1 space-y-1">
-                                    <li class="font-bold text-navy-800">Includes Federal + 1 State Return</li>
-                                    <li>Standard Deduction (No Itemizing)</li>
-                                    <li>W-2 Income & Interest/Dividends</li>
-                                    <li>Perfect for single filers & simple situations</li>
-                                </ul>
-                            </div>
-                            <button onclick="addW2Express(this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add W-2 Express</button>
-                        </div>
-
-                        <div class="service-card bg-white border border-stone-200 rounded-lg p-4 relative overflow-hidden">
-                             <div class="absolute top-0 right-0 bg-stone-100 text-stone-500 text-[10px] px-2 py-1 rounded-bl font-bold">STANDARD</div>
-                            <h3 class="font-bold text-navy-900 mb-2">Standard 1040 Return</h3>
-                            <p class="text-sm text-stone-500 mb-3">Base Price: $225</p>
-                            <div class="bg-stone-50 p-3 rounded mb-3 text-xs text-stone-600">
-                                <ul class="list-disc pl-4 mt-1 space-y-1">
-                                    <li>Homeowners & Simple Itemizing (SALT, Charity)</li>
-                                    <li>Dependents & Child Tax Credits</li>
-                                    <li>Education Credits & Student Loan Interest</li>
-                                    <li>HSA Distributions</li>
-                                </ul>
-                            </div>
-                            <div class="mb-3">
-                                <label class="flex items-center gap-2 text-sm text-stone-700 font-semibold cursor-pointer">
-                                    <input type="checkbox" id="chk_scha_complex" class="rounded text-forest-600 focus:ring-forest-500"> 
-                                    Complex Itemizing (+$75)
-                                </label>
-                            </div>
-                            <button onclick="addSimpleReturn(this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add Standard</button>
-                        </div>
-                        
-                        <div class="border-t border-stone-200 pt-4 mt-2">
-                            <h3 class="text-xs font-bold text-stone-400 uppercase tracking-wider mb-3 ml-1">Common Add-ons</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="service-card bg-white border border-stone-200 rounded-lg p-4">
-                                    <h3 class="font-bold text-navy-900 text-sm mb-1">Additional State Returns</h3>
-                                    <select id="sel_states" class="w-full text-sm border-stone-300 rounded p-2 bg-stone-50 mb-3">
-                                        <option value="50">1 State ($50)</option>
-                                        <option value="100">2 States ($100)</option>
-                                        <option value="150">3 States ($150)</option>
-                                        <option value="custom">4+ States (Custom)</option>
-                                    </select>
-                                    <button onclick="addStates(this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add</button>
-                                </div>
-                                
-                                <div class="service-card bg-white border border-stone-200 rounded-lg p-4">
-                                    <h3 class="font-bold text-navy-900 text-sm mb-1">Business / Sole Prop (Sch C)</h3>
-                                    <select id="sel_sch_c" class="w-full text-sm border-stone-300 rounded p-2 bg-stone-50 mb-2">
-                                        <option value="200">Sole Prop - Organized ($200)</option>
-                                        <option value="400">Single Member LLC - Clean ($400)</option>
-                                        <option value="600">Multi-Member / Cleanup ($600)</option>
-                                    </select>
-                                    <p class="text-[10px] text-stone-500 mb-3 leading-tight italic">
-                                        *You provide a total summary (spreadsheet) of income & expenses. No receipt sorting.
-                                    </p>
-                                    <button onclick="addScheduleC(this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add</button>
-                                </div>
-
-                                <div class="service-card bg-white border border-stone-200 rounded-lg p-4">
-                                    <h3 class="font-bold text-navy-900 text-sm mb-1">Rentals (Sch E)</h3>
-                                    <select id="sel_rentals" class="w-full text-sm border-stone-300 rounded p-2 bg-stone-50 mb-3">
-                                        <option value="125">1 Property (+$125)</option>
-                                        <option value="200">2-3 Properties (+$200)</option>
-                                        <option value="custom">4+ Properties (Custom)</option>
-                                    </select>
-                                    <button onclick="addRentals(this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add</button>
-                                </div>
-
-                                <div class="service-card bg-white border border-stone-200 rounded-lg p-4">
-                                    <h3 class="font-bold text-navy-900 text-sm mb-1">Capital Gains (Sch D)</h3>
-                                    <p class="text-[10px] text-stone-500 mb-2">Sale of stocks, crypto, real estate, etc.</p>
-                                    <select id="sel_1099b" class="w-full text-sm border-stone-300 rounded p-2 bg-stone-50 mb-3">
-                                        <option value="50">1-25 trades (+$50)</option>
-                                        <option value="100">26-200 trades (+$100)</option>
-                                        <option value="custom">200+ trades (Custom)</option>
-                                    </select>
-                                    <button onclick="add1099B(this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- New Bank Product Section -->
-                        <div class="mt-2 mb-2">
-                            <div class="service-card bg-stone-50 border-2 border-forest-400 rounded-lg p-4 relative overflow-hidden">
-                                <div class="absolute top-0 right-0 bg-forest-500 text-white text-[10px] px-2 py-1 rounded-bl font-bold">NO UPFRONT COST</div>
-                                <h3 class="font-bold text-navy-900 mb-1">Pay With My Refund (Bank Product)</h3>
-                                <p class="text-sm text-stone-600 mb-2">Deduct preparation fees from your refund. <span class="font-bold text-forest-600">$82.90 Base Fee</span>.</p>
-                                <div class="text-xs text-stone-500 mb-3 bg-white p-2 rounded border border-stone-200 space-y-1">
-                                    <p><span class="font-bold text-navy-800">Refund Advance:</span> Up to <span class="font-bold">$1,000 at NO COST</span> (0% APR) after IRS acceptance. Loans up to $7,000 available (fees apply).</p>
-                                    <p class="pt-1 border-t border-stone-100"><span class="font-bold text-navy-800">Disbursement:</span> Direct Deposit, FasterMoney® Visa Card, or Check.</p>
-                                    <p class="text-[10px] italic text-stone-400 mt-1">*Fees are deducted from the refund, reducing the total amount deposited. Full fee schedule discussed prior to signing.</p>
-                                </div>
-                                <button onclick="addPayByRefund(this)" class="w-full bg-forest-600 hover:bg-forest-700 text-white text-sm font-bold py-2 rounded transition">Add Bank Product</button>
-                            </div>
-                        </div>
-
-                        <!-- Tax Planning Session (Moved to below Bank Product) -->
-                        <div class="service-card bg-white border border-stone-200 rounded-lg p-4 flex flex-col justify-between mt-2 mb-2">
-                            <div>
-                                <h3 class="font-bold text-navy-900 mb-1">Tax Planning Session</h3>
-                                <p class="text-sm text-stone-500 mb-3">Dedicated consultation for proactive strategies.</p>
-                            </div>
-                            <button onclick="addDirectItem('t7', 'Tax Planning Session', 200, 'onetime', 'tax', this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add ($200)</button>
-                        </div>
-                        
-                        <h3 class="text-xs font-bold text-stone-400 uppercase tracking-wider mt-2 mb-1 ml-1">Partnerships & S-Corps</h3>
-                         <div class="service-card bg-white border border-stone-200 rounded-lg p-4">
-                            <h3 class="font-bold text-navy-900 mb-1">Partnership & S-Corp Inquiry</h3>
-                            <p class="text-xs text-stone-500 mb-3">Includes initial review of books & structure. Fee applied to final bill if you proceed.</p>
-                            <button onclick="addDirectItem('t_entity_review', 'Entity Initial Review', 100, 'onetime', 'tax', this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add Initial Review ($100)</button>
-                        </div>
-                    </div>
-                </div>`;
-        }
-
-        function renderBookkeepingTab(container) {
-            container.innerHTML = `
-                <div class="bg-white rounded-lg shadow-sm p-6">
-                    <h2 class="text-2xl font-bold text-navy-900 mb-2">Fully Managed Bookkeeping</h2>
-                    <div class="text-xs text-forest-600 font-bold mb-4">Integrated with Tax & Payroll</div>
-                    <p class="text-stone-600 mb-6 border-b border-stone-200 pb-4">Clean, reconciled, tax-ready financials. Flat-rate pricing.</p>
-                    
-                    <!-- Bookkeeping Tiers -->
-                    <div class="md:col-span-2 bg-stone-50 p-4 rounded-lg border border-stone-200 mb-6">
-                        <h3 class="font-bold text-navy-900 mb-3 text-lg">Monthly Bookkeeping Tiers</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <!-- Starter -->
-                            <div class="bg-white p-4 rounded border border-stone-300 flex flex-col justify-between">
-                                <div>
-                                    <h4 class="font-bold text-navy-800 mb-1">Starter</h4>
-                                    <div class="text-2xl font-bold text-forest-600 mb-2">$95<span class="text-sm font-normal text-stone-500">/mo</span></div>
-                                    <ul class="text-xs text-stone-600 space-y-1 mb-4 list-disc pl-3">
-                                        <li>~50 transactions/mo</li>
-                                        <li>Bank/CC Reconciliation</li>
-                                        <li>P&L + Tax Export</li>
-                                    </ul>
-                                </div>
-                                <button onclick="addBookkeepingTier('b_start', 'Starter Bookkeeping', 95, this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-xs font-bold py-2 rounded transition">Add Starter</button>
-                            </div>
-
-                            <!-- Core -->
-                            <div class="bg-white p-4 rounded border-2 border-navy-800 relative flex flex-col justify-between shadow-md transform scale-105 z-10">
-                                <div class="absolute top-0 right-0 bg-navy-800 text-white text-[10px] font-bold px-2 py-1 rounded-bl">POPULAR</div>
-                                <div>
-                                    <h4 class="font-bold text-navy-800 mb-1">Core</h4>
-                                    <div class="text-2xl font-bold text-forest-600 mb-2">$150<span class="text-sm font-normal text-stone-500">/mo</span></div>
-                                    <ul class="text-xs text-stone-600 space-y-1 mb-4 list-disc pl-3">
-                                        <li>~150 transactions/mo</li>
-                                        <li>Payroll JE + Balance Sheet</li>
-                                        <li>Quarterly Review</li>
-                                    </ul>
-                                </div>
-                                <button onclick="addBookkeepingTier('b_core', 'Core Bookkeeping', 150, this)" class="w-full bg-forest-600 hover:bg-forest-700 text-white text-xs font-bold py-2 rounded transition">Add Core</button>
-                            </div>
-
-                            <!-- Advanced -->
-                            <div class="bg-white p-4 rounded border border-stone-300 flex flex-col justify-between">
-                                <div>
-                                    <h4 class="font-bold text-navy-800 mb-1">Advanced</h4>
-                                    <div class="text-2xl font-bold text-forest-600 mb-2">$250<span class="text-sm font-normal text-stone-500">/mo</span></div>
-                                    <ul class="text-xs text-stone-600 space-y-1 mb-4 list-disc pl-3">
-                                        <li>~300 transactions/mo</li>
-                                        <li>Multi-account + 1099s</li>
-                                        <li>Priority Support</li>
-                                    </ul>
-                                </div>
-                                <button onclick="addBookkeepingTier('b_adv', 'Advanced Bookkeeping', 250, this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-xs font-bold py-2 rounded transition">Add Advanced</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modifiers -->
-                    <div class="md:col-span-2 bg-stone-50 p-4 rounded-lg border border-stone-200 mb-6">
-                        <h3 class="font-bold text-navy-900 mb-3 text-sm uppercase">Complexity Modifiers (Monthly)</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
-                            <label class="flex items-center gap-2 p-2 bg-white rounded border border-stone-200 cursor-pointer hover:bg-stone-50">
-                                <input type="checkbox" id="bk_qbo" class="rounded text-forest-600"> 
-                                <span>QBO/External Software (+$25)</span>
-                            </label>
-                            <label class="flex items-center gap-2 p-2 bg-white rounded border border-stone-200 cursor-pointer hover:bg-stone-50">
-                                <input type="checkbox" id="bk_sales_tax" class="rounded text-forest-600"> 
-                                <span>Sales Tax Filing (+$25)</span>
-                            </label>
-                            <label class="flex items-center gap-2 p-2 bg-white rounded border border-stone-200 cursor-pointer hover:bg-stone-50">
-                                <input type="checkbox" id="bk_tipped" class="rounded text-forest-600"> 
-                                <span>Tipped/Cash Heavy (+$25)</span>
-                            </label>
-                        </div>
-                        <button onclick="addBookkeepingExtras(this)" class="w-full mt-4 bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Update Modifiers</button>
-                    </div>
-
-                     <div class="service-card bg-white border border-stone-200 rounded-lg p-4 flex flex-col justify-between">
-                            <div>
-                                <h3 class="font-bold text-navy-900 mb-1">Initial Audit & Clean-Up</h3>
-                                <p class="text-sm text-stone-500 mb-3">Required if books are behind.</p>
-                                <select id="sel_cleanup" class="w-full text-sm border-stone-300 rounded p-2 bg-stone-50 mb-3">
-                                    <option value="200">Tier 1 ($200): 1-2 mos, <100 trans</option>
-                                    <option value="375">Tier 2 ($375): 3-6 mos, mixed trans</option>
-                                    <option value="800">Tier 3 ($800): 6-12 mos, complex</option>
-                                    <option value="custom">Extreme (Custom)</option>
-                                </select>
-                            </div>
-                            <button onclick="addCleanup(this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add Cleanup</button>
-                    </div>
-                </div>
-            `;
-        }
-
-        function renderPayrollTab(container) {
-            container.innerHTML = `
-                <div class="bg-white rounded-lg shadow-sm p-6">
-                    <h2 class="text-2xl font-bold text-navy-900 mb-2">Payroll & HR Services</h2>
-                    <p class="text-stone-600 mb-6 border-b border-stone-200 pb-4">Flat-rate payroll tiers plus expert advisory HR support.</p>
-                    <div class="md:col-span-2 bg-stone-100 p-4 rounded-lg border border-navy-800 mb-4">
-                        <h3 class="font-bold text-lg text-navy-900 mb-3">Fully Managed Payroll</h3>
-                        <p class="text-sm text-stone-600 mb-4">Includes processing, tax filings (941/W-2s), direct deposit.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="bg-white p-4 rounded border border-stone-300 flex flex-col justify-between">
-                                <div>
-                                    <h4 class="font-bold text-navy-800 mb-1">Starter</h4>
-                                    <div class="text-xl font-bold text-forest-600 mb-2">$95<span class="text-sm font-normal text-stone-500">/mo</span></div>
-                                    <ul class="text-xs text-stone-600 space-y-1 mb-4 list-disc pl-3"><li>1-2 employees</li><li>Single state</li><li>Filings included</li></ul>
-                                </div>
-                                <button onclick="addDirectItem('p_drake_starter', 'Payroll: Starter (Mo)', 95, 'monthly', 'payroll', this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-xs font-bold py-2 rounded transition">Add Starter</button>
-                            </div>
-                            <div class="bg-white p-4 rounded border-2 border-navy-800 relative flex flex-col justify-between shadow-md">
-                                <div class="absolute top-0 right-0 bg-navy-800 text-white text-[10px] font-bold px-2 py-1 rounded-bl">REC.</div>
-                                <div>
-                                    <h4 class="font-bold text-navy-800 mb-1">Core</h4>
-                                    <div class="text-xl font-bold text-forest-600 mb-2">$150<span class="text-sm font-normal text-stone-500">/mo</span></div>
-                                    <ul class="text-xs text-stone-600 space-y-1 mb-4 list-disc pl-3"><li>3-6 employees</li><li>PTO tracking</li><li>Enhanced review</li></ul>
-                                </div>
-                                <button onclick="addDirectItem('p_drake_core', 'Payroll: Core (Mo)', 150, 'monthly', 'payroll', this)" class="w-full bg-forest-600 hover:bg-forest-700 text-white text-xs font-bold py-2 rounded transition">Add Core</button>
-                            </div>
-                            <div class="bg-white p-4 rounded border border-stone-300 flex flex-col justify-between">
-                                <div>
-                                    <h4 class="font-bold text-navy-800 mb-1">Advanced</h4>
-                                    <div class="text-xl font-bold text-forest-600 mb-2">$300<span class="text-sm font-normal text-stone-500">/mo</span></div>
-                                    <ul class="text-xs text-stone-600 space-y-1 mb-4 list-disc pl-3"><li>7-15 employees</li><li>Tips/Commissions</li><li>Priority support</li></ul>
-                                </div>
-                                <button onclick="addDirectItem('p_drake_advanced', 'Payroll: Advanced (Mo)', 300, 'monthly', 'payroll', this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-xs font-bold py-2 rounded transition">Add Advanced</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                     <div class="md:col-span-2 service-card bg-white border border-stone-200 rounded-lg p-4 mb-4 flex justify-between items-center">
-                        <div>
-                             <h3 class="font-bold text-navy-900">Payroll Setup Fee ($200)</h3>
-                             <p class="text-xs text-stone-500">System config, YTD imports, registrations.</p>
-                        </div>
-                        <button onclick="addDirectItem('p_setup_drake', 'Payroll Setup Fee', 200, 'onetime', 'payroll', this)" class="bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 px-4 rounded transition">Add Setup</button>
-                    </div>
-
-                    <div class="md:col-span-2 bg-white border border-navy-800 border-2 rounded-lg p-6 mt-4">
-                        <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-                            <div class="flex-grow">
-                                <h3 class="font-bold text-xl text-navy-900 mb-2">HR Advisory Retainer</h3>
-                                <p class="text-sm text-stone-600">Ongoing guidance for 1-10 employees. Advisory support only.</p>
-                            </div>
-                            <button onclick="addDirectItem('hr_retainer', 'HR Advisory Retainer', 75, 'monthly', 'payroll', this)" class="bg-forest-600 hover:bg-forest-700 text-white text-sm font-bold py-2 px-4 rounded transition">Add ($75/mo)</button>
-                        </div>
-                    </div>
-                </div>`;
-        }
-
-        function renderConsultingTab(container) {
-            container.innerHTML = `
-                <div class="bg-white rounded-lg shadow-sm p-6">
-                    <h2 class="text-2xl font-bold text-navy-900 mb-2">Consulting & Formation</h2>
-                    <p class="text-stone-600 mb-6 border-b border-stone-200 pb-4">Expert guidance on business structure and risk.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="md:col-span-2 bg-stone-50 p-4 rounded-lg border border-stone-200">
-                            <h3 class="font-bold text-navy-900 mb-3 text-lg">Business Entity Formation</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div class="bg-white p-4 rounded border border-stone-300">
-                                    <h4 class="font-bold text-navy-800 mb-1">Tier 1 ($250)</h4>
-                                    <p class="text-xs text-stone-600 mb-2">Basic Registration & EIN.</p>
-                                    <button onclick="addDirectItem('c3_tier1', 'Entity Formation (Tier 1)', 250, 'onetime', 'consulting', this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-xs font-bold py-2 rounded transition">Add</button>
-                                </div>
-                                <div class="bg-white p-4 rounded border-2 border-navy-800 relative shadow-md">
-                                    <h4 class="font-bold text-navy-800 mb-1">Tier 2 ($450)</h4>
-                                    <p class="text-xs text-stone-600 mb-2">Tier 1 + Op Agreement & Tax Regs.</p>
-                                    <button onclick="addDirectItem('c3_tier2', 'Business Launch (Tier 2)', 450, 'onetime', 'consulting', this)" class="w-full bg-forest-600 hover:bg-forest-700 text-white text-xs font-bold py-2 rounded transition">Add</button>
-                                </div>
-                                <div class="bg-white p-4 rounded border border-stone-300">
-                                    <h4 class="font-bold text-navy-800 mb-1">Tier 3 ($800)</h4>
-                                    <p class="text-xs text-stone-600 mb-2">Tier 2 + Books/Payroll Setup.</p>
-                                    <button onclick="addDirectItem('c3_tier3', 'Full Infrastructure (Tier 3)', 800, 'onetime', 'consulting', this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-xs font-bold py-2 rounded transition">Add</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-card bg-white border border-stone-200 rounded-lg p-4 flex flex-col justify-between">
-                            <div>
-                                <h3 class="font-bold text-navy-900 mb-1">Action Plan Session</h3>
-                                <p class="text-sm text-stone-500 mb-3">Fixed-fee strategy call (60m).</p>
-                            </div>
-                            <button onclick="addDirectItem('c1', 'Action Plan Session (60m)', 100, 'onetime', 'consulting', this)" class="w-full bg-navy-800 hover:bg-navy-900 text-white text-sm font-bold py-2 rounded transition">Add ($100)</button>
-                        </div>
-                    </div>
-                </div>`;
-        }
-
-        // --- Logic Functions ---
-
-        // Helper to calculate price based on active discount rules
-        function calculateItemPrice(item, rules) {
-            // Check for no-discount flag (e.g. Bank Products)
-            if (item.noDiscount) return item.price;
-
-            let price = item.price;
-            let rate = 0;
-            let flat = 0;
-            
-            if (rules.consulting_flat > 0 && item.cat === 'consulting') {
-                flat = rules.consulting_flat;
-            } else {
-                if (rules.all > 0) rate = rules.all;
-                else if (item.cat === 'tax' && rules.tax > 0) rate = rules.tax;
-                else if (item.cat === 'bookkeeping' && rules.book_all > 0) {
-                    if (['FOUNDERS2026', 'LOCALBIZ', 'TRUSTED26'].includes(currentDiscountCode)) rate = rules.book_all; 
-                }
-            }
-
-            if (flat > 0) {
-                return Math.max(0, price - flat);
-            } else {
-                return price * (1 - rate);
-            }
-        }
-
-        function addPayByRefund(btn) {
-            // Ensure a Tax Return is already in the cart
-            const hasTaxReturn = quoteItems.some(i => i.cat === 'tax');
-            
-            if (!hasTaxReturn) {
-                showModal("Tax Return Required", "You must add a tax return service before adding a Pay-by-Refund product.");
-                return;
-            }
-
-            // Remove existing instance if clicked multiple times (toggle behavior or just reset)
-            quoteItems = quoteItems.filter(i => i.id !== 'bank_product');
-            
-            quoteItems.push({ 
-                id: 'bank_product', 
-                name: 'Pay With Refund (Bank Product)', 
-                price: 82.90, 
-                type: 'onetime', 
-                cat: 'tax', 
-                noDiscount: true 
-            });
-            
-            updateQuote();
-            showToast("Bank product added");
-        }
-
-        function addDirectItem(id, name, price, type, cat, btn) {
-            if (!quoteItems.some(q => q.id === id)) {
-                quoteItems.push({ id, name, price, type, cat });
-                updateQuote();
-                showToast("Service added to quote");
-            }
-        }
-
-        function addBookkeepingTier(id, name, price, btn) {
-            // Remove existing tiers
-            quoteItems = quoteItems.filter(i => !['b_start', 'b_core', 'b_adv'].includes(i.id));
-            quoteItems.push({ id, name, price, type: 'monthly', cat: 'bookkeeping' });
-            updateQuote();
-            showToast("Bookkeeping tier updated");
-        }
-
-        function addBookkeepingExtras(btn) {
-            quoteItems = quoteItems.filter(i => i.id !== 'bk_modifiers');
-            
-            let total = 0;
-            let details = [];
-            
-            if (document.getElementById('bk_qbo').checked) { total += 25; details.push("QBO/Ext"); }
-            if (document.getElementById('bk_sales_tax').checked) { total += 25; details.push("Sales Tax"); }
-            if (document.getElementById('bk_tipped').checked) { total += 25; details.push("Tipped/Cash"); }
-            
-            if (total > 0) {
-                quoteItems.push({ id: 'bk_modifiers', name: `Bookkeeping Add-ons`, price: total, type: 'monthly', cat: 'bookkeeping' });
-                showToast("Modifiers updated");
-            } else {
-                showToast("Modifiers cleared", "info");
-            }
-            updateQuote();
-        }
-        
-        function addW2Express(btn) {
-            // Remove Standard Return if present (t1_) and previous Express (t0_)
-            quoteItems = quoteItems.filter(i => !i.id.startsWith('t1_') && !i.id.startsWith('t0_'));
-            
-            quoteItems.push({ id: 't0_express', name: 'W-2 Express Return', price: 150, type: 'onetime', cat: 'tax' });
-            updateQuote();
-            showToast("Express Return added");
-        }
-
-        function addSimpleReturn(btn) {
-            let price = 225, name = "Standard 1040 Return";
-            if (document.getElementById('chk_scha_complex').checked) { price += 75; name += " + Complex Itemizing"; }
-            
-            // Remove previous instances of Standard (t1_) AND Express (t0_)
-            quoteItems = quoteItems.filter(i => !i.id.startsWith('t1_') && !i.id.startsWith('t0_'));
-            
-            quoteItems.push({ id: `t1_${price}`, name, price, type: 'onetime', cat: 'tax' });
-            updateQuote();
-            showToast("Standard Return added");
-        }
-
-        // Generic wrapper for select inputs
-        function addSelectBasedItem(selectId, prefix, nameBase, cat, type='onetime', allowCustom=true) {
-            const val = document.getElementById(selectId).value;
-            if (allowCustom && val === 'custom') { 
-                showModal("Custom Quote Required", "This complexity requires a manual review. Please continue with your other items and mention this in your request notes."); 
-                return; 
-            }
-            const price = parseInt(val);
-            // Remove existing
-            quoteItems = quoteItems.filter(i => !i.id.startsWith(prefix));
-            quoteItems.push({ id: `${prefix}_${price}`, name: `${nameBase} ($${price})`, price, type, cat });
-            updateQuote();
-            showToast("Added to quote");
-        }
-
-        // Wrapper wrappers
-        function addStates(btn) { addSelectBasedItem('sel_states', 't_state', 'Additional State', 'tax'); }
-        function add1099B(btn) { addSelectBasedItem('sel_1099b', 't_1099b', 'Capital Gains (Sch D)', 'tax'); }
-        function addRentals(btn) { addSelectBasedItem('sel_rentals', 't_rent', 'Rentals', 'tax'); }
-        function addCleanup(btn) { addSelectBasedItem('sel_cleanup', 'b_clean', 'Initial Cleanup', 'bookkeeping'); }
-
-        function addScheduleC(btn) {
-            const val = parseInt(document.getElementById('sel_sch_c').value);
-            // No cleanup checkbox logic needed based on simplified structure, but kept logic generic if select has it built in
-            // Actually the select values are total prices now
-            const price = val;
-            
-            // Get text from selected option
-            const sel = document.getElementById('sel_sch_c');
-            const text = sel.options[sel.selectedIndex].text.split(' ($')[0]; // Extract name part
-            
-            quoteItems = quoteItems.filter(i => !i.id.startsWith('t_sch_c'));
-            quoteItems.push({ id: `t_sch_c_${price}`, name: `Business: ${text}`, price, type: 'onetime', cat: 'tax' });
-            updateQuote();
-            showToast("Business return added");
-        }
-
-        function removeFromQuote(itemId) {
-            quoteItems = quoteItems.filter(i => i.id !== itemId);
-            updateQuote();
-        }
-
-        function resetQuote() {
-            quoteItems = [];
-            document.getElementById('discount-input').value = '';
-            document.getElementById('referral-input').value = '';
-            clearDiscountCode(); 
-            document.getElementById('selected-items').innerHTML = '<div class="text-stone-500 italic text-center py-6 border-2 border-dashed border-navy-800 rounded">Add services to build your quote.</div>';
-            
-            // Reset totals
-            const zeros = ['$0', '$0/mo'];
-            ['total-onetime', 'total-monthly', 'mobile-onetime', 'mobile-monthly'].forEach((id, i) => document.getElementById(id).innerText = zeros[i % 2]);
-
-            updateChart(0,0,0);
-            showToast("Quote reset", "info");
-        }
-
-        function clearDiscountCode() {
-            currentDiscountCode = 'none';
-            document.getElementById('discount-input').value = '';
-            document.getElementById('discount-input').disabled = false;
-            updateQuote();
-        }
-
-        function applyDiscountCode() {
-            const code = document.getElementById('discount-input').value.toUpperCase().trim();
-            if (discountRules[code]) {
-                currentDiscountCode = code;
-                document.getElementById('discount-input').disabled = true;
-                showToast("Discount applied!");
-            } else {
-                currentDiscountCode = 'none';
-                showToast("Invalid code", "error");
-            }
-            updateQuote();
-        }
-
-        function updateQuote() {
-            const list = document.getElementById('selected-items');
-            list.innerHTML = '';
-            
-            const rules = discountRules[currentDiscountCode] || discountRules['none'];
-            const feedback = document.getElementById('discount-feedback');
-            feedback.innerText = currentDiscountCode === 'none' ? rules.publicDesc : rules.privateDesc;
-            feedback.className = `text-xs mt-1 h-auto min-h-[1rem] ${currentDiscountCode === 'none' ? 'text-stone-400' : 'text-forest-400 font-bold'}`;
-
-            let tOne = 0, tMo = 0, cTax = 0, cBook = 0, cOther = 0;
-
-            if (quoteItems.length === 0) list.innerHTML = '<div class="text-stone-500 italic text-center py-6 border-2 border-dashed border-navy-800 rounded">Add services to build your quote.</div>';
-
-            quoteItems.forEach(item => {
-                const finalPrice = calculateItemPrice(item, rules);
-                const isDiscounted = finalPrice < item.price;
-
-                if (item.type === 'monthly') tMo += finalPrice; else tOne += finalPrice;
-                
-                const ann = item.type === 'monthly' ? finalPrice * 12 : finalPrice;
-                if (item.cat === 'tax') cTax += ann;
-                else if (item.cat === 'bookkeeping') cBook += ann;
-                else cOther += ann;
-
-                const el = document.createElement('div');
-                el.className = 'flex justify-between items-center bg-navy-800 p-3 rounded border border-navy-700 text-white shadow-sm';
-                
-                // Show decimals only if needed
-                const displayPrice = finalPrice % 1 === 0 ? Math.round(finalPrice) : finalPrice.toFixed(2);
-
-                el.innerHTML = `
-                    <div class="flex-grow">
-                        <div class="text-xs font-bold">${item.name}</div>
-                        ${isDiscounted ? '<div class="text-[10px] text-forest-400">Discount Applied</div>' : ''}
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="text-sm font-mono font-bold">$${displayPrice}</span>
-                        <button onclick="removeFromQuote('${item.id}')" class="text-stone-400 hover:text-red-400 transition" title="Remove">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                            </svg>
-                        </button>
-                    </div>`;
-                list.appendChild(el);
-            });
-
-            // Update Desktop Totals
-            const displayOne = tOne % 1 === 0 ? Math.round(tOne) : tOne.toFixed(2);
-            const displayMo = tMo % 1 === 0 ? Math.round(tMo) : tMo.toFixed(2);
-
-            document.getElementById('total-onetime').innerText = `$${displayOne}`;
-            document.getElementById('total-monthly').innerText = `$${displayMo}`;
-            
-            // Update Mobile Totals
-            document.getElementById('mobile-onetime').innerHTML = `$${displayOne} <span class="text-xs font-normal text-stone-400">1x</span>`;
-            document.getElementById('mobile-monthly').innerHTML = `$${displayMo} <span class="text-xs font-normal text-stone-400">/mo</span>`;
-            
-            updateChart(cTax, cBook, cOther);
-        }
-
-        function updateChart(t, b, o) {
-            const ctx = document.getElementById('quoteChart').getContext('2d');
-            if (quoteChart) quoteChart.destroy();
-            if (t===0 && b===0 && o===0) return;
-            quoteChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: { labels: ['Tax', 'Bookkeeping', 'Other'], datasets: [{ data: [t, b, o], backgroundColor: ['#1e3a8a', '#059669', '#f97316'], borderWidth: 0 }] },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { color: '#e7e5e4', boxWidth: 10, font: { size: 10 } } } } }
-            });
-        }
-
-        function requestQuote(type) {
-            if (quoteItems.length === 0 || !document.getElementById('scope-confirm').checked) {
-                showModal("Incomplete Request", "Please add services and confirm the service scope before sending.");
-                return;
-            }
-
-            const rules = discountRules[currentDiscountCode] || discountRules['none'];
-            
-            let body = "Hennig Financial Quote Request:\n\n";
-            let t1 = 0, t2 = 0;
-            
-            const refName = document.getElementById('referral-input').value;
-            if (refName) body += `Referred By: ${refName}\n\n`;
-
-            quoteItems.forEach(i => {
-                const price = calculateItemPrice(i, rules);
-                const displayPrice = price % 1 === 0 ? Math.round(price) : price.toFixed(2);
-                
-                body += `- ${i.name}: $${displayPrice} (${i.type})\n`;
-                if(i.type==='monthly') t2+=price; else t1+=price;
-            });
-
-            const displayT1 = t1 % 1 === 0 ? Math.round(t1) : t1.toFixed(2);
-            const displayT2 = t2 % 1 === 0 ? Math.round(t2) : t2.toFixed(2);
-
-            body += `\nEst One-Time: $${displayT1}\nEst Monthly: $${displayT2}`;
-            if (currentDiscountCode !== 'none') body += `\nCode: ${currentDiscountCode}`;
-            
-            const sub = encodeURIComponent("Quote Request");
-            const b = encodeURIComponent(body);
-            const toEmail = "ron@hennigfinancial.com";
-            
-            if (type === 'gmail') {
-                window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${toEmail}&su=${sub}&body=${b}`, '_blank');
-            } else {
-                window.location.href = `mailto:${toEmail}?subject=${sub}&body=${b}`;
-            }
-        }
-        
-        function requestQuoteGmailOnly() { requestQuote('gmail'); }
-
-        document.addEventListener('DOMContentLoaded', () => { 
-            switchTab('tax'); 
-            updateButtonState(); 
-        });
-    </script>
 </body>
-
 </html>
