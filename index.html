@@ -3,240 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hennig Financial LLC | Modern Tax & Bookkeeping</title>
-    <!-- Tailwind CSS -->
+    <title>Hennig Financial LLC | Tax, Accounting & HR in New Jersey</title>
+    <meta name="description" content="Flat-rate tax preparation for individuals and an ongoing accounting partnership for small businesses — bookkeeping, payroll, and tax under one roof. New Jersey based.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Chosen Palette: Warm Professional -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        stone: { 50: '#fafaf9', 100: '#f5f5f4', 200: '#e7e5e4', 800: '#292524', 900: '#1c1917' },
-                        navy: { 800: '#1e3a8a', 900: '#172554' },
-                        forest: { 400: '#34d399', 500: '#10b981', 600: '#059669', 700: '#047857' },
-                        alert: { 500: '#f97316' }
+                        navy: { 50: '#eff6ff', 100: '#dbeafe', 700: '#1e40af', 800: '#1e3a8a', 900: '#172554', 950: '#0f1a3d' },
+                        forest: { 50: '#ecfdf5', 100: '#d1fae5', 400: '#34d399', 500: '#10b981', 600: '#059669', 700: '#047857' }
                     },
                     fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
                 }
             }
         }
     </script>
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .step-number { font-feature-settings: "tnum"; font-variant-numeric: tabular-nums; }
-    </style>
 </head>
-<body class="bg-stone-50 text-stone-800 flex flex-col min-h-screen">
+<body class="bg-stone-50 text-stone-800 font-sans flex flex-col min-h-screen">
 
     <!-- Navigation -->
-    <header class="bg-navy-900 text-stone-50 shadow-md relative z-10">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center gap-4">
-                <img src="logo.png" alt="Hennig Financial Logo" class="h-14 w-auto object-contain">
-                <div>
-                    <h1 class="text-2xl font-bold tracking-tight text-white">Hennig Financial LLC</h1>
-                    <p class="text-sm text-stone-300">Modern Tax, Bookkeeping & Payroll Support</p>
-                </div>
-            </div>
-            <div class="mt-4 md:mt-0 flex items-center gap-6 text-sm font-medium">
-                <a href="#how-it-works" class="text-stone-300 hover:text-forest-400 transition">How It Works</a>
-                <a href="#pricing" class="text-stone-300 hover:text-forest-400 transition">Pricing</a>
+    <header class="bg-navy-900 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-3">
+                <span class="bg-white rounded-lg p-1"><img src="logo.png" alt="Hennig Financial logo" class="h-12 w-12 object-contain"></span>
+                <span>
+                    <span class="block text-xl font-bold tracking-tight">Hennig Financial LLC</span>
+                    <span class="block text-xs text-stone-300">Tax, Accounting &amp; HR</span>
+                </span>
+            </a>
+            <nav class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium">
+                <a href="#tax" class="text-forest-400">Tax Prep</a>
+                <a href="accounting.html" class="text-stone-300 hover:text-forest-400 transition">Accounting &amp; Payroll</a>
                 <a href="about.html" class="text-stone-300 hover:text-forest-400 transition">About</a>
-                <a href="resources.html" class="text-stone-300 hover:text-forest-400 transition">Resources</a>
-                <a href="mailto:ron@hennigfinancial.com" class="bg-forest-600 hover:bg-forest-700 text-white px-5 py-2 rounded transition shadow-md">Get Started</a>
-            </div>
+                <a href="resources.html" class="text-stone-300 hover:text-forest-400 transition">FAQ</a>
+                <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="bg-forest-600 hover:bg-forest-700 text-white px-4 py-2 rounded shadow transition">Get Started</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="bg-white border-b border-stone-200">
-        <div class="container mx-auto px-4 py-16 md:py-24 max-w-4xl text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-navy-900 mb-6 leading-tight">
-                Tax Prep Made Simple.
-            </h2>
-            <p class="text-xl text-stone-600 mb-8 leading-relaxed max-w-2xl mx-auto">
-                Expert preparation, transparent flat-rate pricing, and a secure digital process designed for modern life.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="mailto:ron@hennigfinancial.com?subject=New Client Inquiry" class="bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 px-8 rounded shadow-lg transition transform hover:-translate-y-0.5">
-                    Book Onboarding Call
+        <div class="max-w-5xl mx-auto px-4 py-16 md:py-20 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-navy-900 mb-5 leading-tight">Tax and accounting for New Jersey individuals and small businesses</h1>
+            <p class="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto mb-10">We prepare individual tax returns at a flat price, and we handle bookkeeping, payroll, and business taxes for small businesses on a monthly retainer.</p>
+
+            <div class="grid md:grid-cols-2 gap-5 text-left max-w-3xl mx-auto">
+                <a href="accounting.html" class="group block rounded-xl border-2 border-navy-900 bg-navy-900 text-white p-6 shadow-lg hover:-translate-y-0.5 transition">
+                    <p class="text-xs font-bold uppercase tracking-widest text-forest-400 mb-2">For small businesses</p>
+                    <h2 class="text-xl font-bold mb-2">Accounting Partnership</h2>
+                    <p class="text-sm text-stone-300 mb-4">Bookkeeping, payroll, and your business tax return on one monthly retainer.</p>
+                    <p class="font-semibold">From $150/mo <span class="group-hover:translate-x-1 inline-block transition">&rarr;</span></p>
                 </a>
-                <a href="#pricing" class="bg-white border-2 border-stone-200 hover:border-navy-900 text-navy-900 font-bold py-3 px-8 rounded transition">
-                    View Pricing
+                <a href="#tax" class="group block rounded-xl border-2 border-stone-200 bg-stone-50 p-6 hover:border-navy-900 hover:-translate-y-0.5 transition">
+                    <p class="text-xs font-bold uppercase tracking-widest text-forest-600 mb-2">For individuals &amp; families</p>
+                    <h2 class="text-xl font-bold text-navy-900 mb-2">Tax Preparation</h2>
+                    <p class="text-sm text-stone-600 mb-4">One flat price that includes your federal return and every state you need.</p>
+                    <p class="font-semibold text-navy-900">From $150 <span class="group-hover:translate-x-1 inline-block transition">&rarr;</span></p>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section id="how-it-works" class="py-16 bg-stone-50">
-        <div class="container mx-auto px-4 max-w-6xl">
+    <!-- Tax Packages -->
+    <section id="tax" class="py-16 bg-stone-50 scroll-mt-4">
+        <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-xs font-bold text-forest-600 tracking-widest uppercase mb-2">The Process</h2>
-                <h3 class="text-3xl font-bold text-navy-900">Simple, Secure, and Digital.</h3>
+                <h2 class="text-3xl font-bold text-navy-900">Individual tax preparation</h2>
+                <p class="text-stone-500 mt-2">Your price includes your federal return and every state return you need to file.</p>
             </div>
 
-            <div class="grid md:grid-cols-4 gap-8">
-                <!-- Step 1 -->
-                <div class="relative p-6 bg-white rounded-lg shadow-sm border border-stone-100">
-                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md step-number">1</div>
-                    <h4 class="text-lg font-bold text-navy-900 mb-2 mt-2">Connect & Quote</h4>
-                    <p class="text-sm text-stone-600">Reach out for a quick quote. We'll schedule a brief 15-minute onboarding call to confirm your needs and setup.</p>
+            <div class="grid md:grid-cols-3 gap-6 items-stretch">
+                <!-- Essential -->
+                <div class="bg-white rounded-xl border border-stone-200 p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-navy-900">Essential</h3>
+                    <p class="text-xs text-stone-500 font-semibold uppercase tracking-wide mt-1">Students, W-2 earners &amp; retirees</p>
+                    <p class="text-4xl font-extrabold text-navy-900 my-5">$150</p>
+                    <ul class="text-sm text-stone-600 space-y-2 flex-grow">
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> W-2 wages, unemployment, interest &amp; dividends</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Social Security &amp; simple retirement income</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Standard deduction</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Dependents, Child Tax Credit &amp; EITC</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Education credits (1098-T) &amp; student loan interest</li>
+                    </ul>
+                    <p class="text-xs text-forest-700 font-semibold mt-6 pt-4 border-t border-stone-100">Federal + all states included</p>
                 </div>
 
-                <!-- Step 2 -->
-                <div class="relative p-6 bg-white rounded-lg shadow-sm border border-stone-100">
-                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md step-number">2</div>
-                    <h4 class="text-lg font-bold text-navy-900 mb-2 mt-2">Secure Upload</h4>
-                    <p class="text-sm text-stone-600">You'll receive access to our secure client app. Fill out simple checklists and snap photos of your docs to upload instantly.</p>
+                <!-- Complete -->
+                <div class="bg-white rounded-xl border-2 border-navy-900 p-6 flex flex-col relative shadow-lg">
+                    <span class="absolute top-0 right-0 bg-navy-900 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">MOST POPULAR</span>
+                    <h3 class="text-xl font-bold text-navy-900">Complete</h3>
+                    <p class="text-xs text-stone-500 font-semibold uppercase tracking-wide mt-1">Homeowners, investors &amp; landlords</p>
+                    <p class="text-4xl font-extrabold text-navy-900 my-5">$225</p>
+                    <p class="text-sm font-semibold text-navy-900 mb-2">Everything in Essential, plus:</p>
+                    <ul class="text-sm text-stone-600 space-y-2 flex-grow">
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Itemized deductions (mortgage, property tax, charity)</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Investment &amp; crypto sales (1099-B)</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> K-1s from partnerships, S-corps &amp; trusts</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Rental property income</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Marketplace insurance (1095-A) &amp; HSAs</li>
+                    </ul>
+                    <p class="text-xs text-forest-700 font-semibold mt-6 pt-4 border-t border-stone-100">Federal + all states included</p>
                 </div>
 
-                <!-- Step 3 -->
-                <div class="relative p-6 bg-white rounded-lg shadow-sm border border-stone-100">
-                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md step-number">3</div>
-                    <h4 class="text-lg font-bold text-navy-900 mb-2 mt-2">Expert Prep</h4>
-                    <p class="text-sm text-stone-600">We prepare your return, asking follow-up questions via the portal. No need to drive to an office.</p>
+                <!-- Self-Employed -->
+                <div class="bg-white rounded-xl border border-stone-200 p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-navy-900">Self-Employed</h3>
+                    <p class="text-xs text-stone-500 font-semibold uppercase tracking-wide mt-1">Freelancers &amp; single-owner businesses</p>
+                    <p class="text-4xl font-extrabold text-navy-900 my-5">$350</p>
+                    <p class="text-sm font-semibold text-navy-900 mb-2">Everything in Complete, plus:</p>
+                    <ul class="text-sm text-stone-600 space-y-2 flex-grow">
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> One Schedule C business</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Self-employment tax &amp; QBI deduction</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Home office &amp; vehicle deductions</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Next year's estimated tax vouchers</li>
+                    </ul>
+                    <p class="text-xs text-stone-500 mt-6 pt-4 border-t border-stone-100">Requires organized business records &mdash; <a href="#organized" class="underline hover:text-navy-900">what that means</a></p>
                 </div>
+            </div>
 
-                <!-- Step 4 -->
-                <div class="relative p-6 bg-white rounded-lg shadow-sm border border-stone-100">
-                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-forest-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md step-number">4</div>
-                    <h4 class="text-lg font-bold text-navy-900 mb-2 mt-2">Review & Sign</h4>
-                    <p class="text-sm text-stone-600">Receive a draft to review. Digitally sign from your phone. Choose to pay upfront or deduct fees from your refund.</p>
+            <!-- Which package -->
+            <div class="mt-8 bg-white rounded-xl border border-stone-200 p-6 md:flex gap-6 items-start">
+                <p class="text-sm font-bold text-navy-900 uppercase tracking-wide whitespace-nowrap mb-2 md:mb-0">Which one am I?</p>
+                <p class="text-sm text-stone-600">You're <strong>Complete</strong> if you itemize, sold investments, own a rental property, or received a K-1, 1095-A, or HSA form. You're <strong>Self-Employed</strong> if you had freelance or business income. Otherwise, you're <strong>Essential</strong>. Unusually complex situations (several rentals, multiple businesses) may be quoted higher &mdash; we'll always confirm your price before we start.</p>
+            </div>
+
+            <!-- Comparison -->
+            <div class="mt-12 grid md:grid-cols-2 gap-6">
+                <div class="rounded-xl border border-stone-200 bg-stone-100 p-6">
+                    <h3 class="font-bold text-stone-700 mb-4">The &ldquo;free&rdquo; software math</h3>
+                    <ul class="text-sm text-stone-600 space-y-3">
+                        <li class="flex gap-2"><span class="text-stone-400 font-bold">&times;</span> &ldquo;Free&rdquo; headline price covers only the simplest returns</li>
+                        <li class="flex gap-2"><span class="text-stone-400 font-bold">&times;</span> State returns billed separately</li>
+                        <li class="flex gap-2"><span class="text-stone-400 font-bold">&times;</span> Upgrades to unlock common forms or talk to a pro</li>
+                        <li class="flex gap-2"><span class="text-stone-400 font-bold">&times;</span> You do the work &mdash; and own the mistakes</li>
+                    </ul>
+                </div>
+                <div class="rounded-xl border-2 border-forest-600 bg-white p-6">
+                    <h3 class="font-bold text-navy-900 mb-4">Hennig Financial</h3>
+                    <ul class="text-sm text-stone-700 space-y-3">
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> One flat price, published up front</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Every state return included</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Prepared and reviewed by a person who answers your questions</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> If the IRS has questions about a return we prepared, we can represent you before IRS examiners and customer service</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Organized records -->
+            <div id="organized" class="mt-12 bg-navy-50 border-l-4 border-navy-800 rounded-r-xl p-6 scroll-mt-4">
+                <h3 class="font-bold text-navy-900 mb-2">Self-employed with messy records?</h3>
+                <p class="text-sm text-stone-700">The Self-Employed package assumes your records are tax-ready: a profit &amp; loss summary or bookkeeping report, with income and expenses totaled by category. If you're starting from bank statements and a shoebox of receipts, begin with a <a href="accounting.html#projects" class="font-semibold text-navy-800 underline">Schedule C cleanup</a> &mdash; or let us keep your books all year so tax time is easy.</p>
+            </div>
+
+            <!-- Business & nonprofit returns -->
+            <div class="mt-12 grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl border border-stone-200 p-6">
+                    <p class="text-xs font-bold text-forest-600 uppercase tracking-widest mb-2">Business Returns</p>
+                    <h3 class="text-lg font-bold text-navy-900">S-Corporations &amp; Partnerships</h3>
+                    <p class="text-sm text-stone-600 mt-1">Form 1120-S and Form 1065, with K-1s for each owner.</p>
+                    <p class="text-2xl font-bold text-navy-900 mt-4">From $750</p>
+                    <p class="text-sm text-forest-700 font-semibold mt-1"><a href="accounting.html" class="underline">Included with any accounting retainer &rarr;</a></p>
+                </div>
+                <div class="bg-white rounded-xl border border-stone-200 p-6">
+                    <p class="text-xs font-bold text-forest-600 uppercase tracking-widest mb-2">Nonprofit Returns</p>
+                    <h3 class="text-lg font-bold text-navy-900">Form 990-EZ &amp; 990</h3>
+                    <p class="text-sm text-stone-600 mt-1">Annual information returns for tax-exempt organizations.</p>
+                    <p class="text-2xl font-bold text-navy-900 mt-4">Community pricing</p>
+                    <p class="text-sm text-stone-600 mt-1">Reduced rates for small, volunteer-run nonprofits. Reach out and tell us about your organization.</p>
+                    <p class="text-sm text-forest-700 font-semibold mt-3"><a href="accounting.html" class="underline">Need year-round bookkeeping too? See our accounting retainers &rarr;</a></p>
+                </div>
+            </div>
+
+            <!-- Payment -->
+            <div class="mt-12 bg-white rounded-xl border border-stone-200 p-6 md:flex gap-8 items-center">
+                <div class="flex-grow">
+                    <h3 class="font-bold text-navy-900 mb-1">Pay when you sign &mdash; or from your refund</h3>
+                    <p class="text-sm text-stone-600">Prefer nothing out of pocket? Our fee can be deducted from your federal refund for a <strong>$39.95</strong> processing fee charged by our bank partner, EPS Financial. We don't offer refund advances or loans.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-16 bg-white">
-        <div class="container mx-auto px-4 max-w-5xl">
+    <!-- Process -->
+    <section id="how-it-works" class="py-16 bg-white border-t border-stone-200">
+        <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-xs font-bold text-forest-600 tracking-widest uppercase mb-2">Transparent Pricing</h2>
-                <h3 class="text-3xl font-bold text-navy-900">Know What You Pay.</h3>
-                <p class="text-stone-500 mt-2">Simple flat rates for most common situations.</p>
+                <h2 class="text-3xl font-bold text-navy-900">How it works</h2>
+                <p class="text-stone-500 mt-2">Everything happens online, so there's no need to come to an office.</p>
             </div>
-
-            <div class="grid md:grid-cols-2 gap-6 mb-8">
-                
-                <!-- W-2 Express -->
-                <div class="border-2 border-stone-100 rounded-xl p-6 hover:border-forest-400 transition bg-stone-50">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h4 class="text-xl font-bold text-navy-900">W-2 Express</h4>
-                            <p class="text-xs text-stone-500 font-semibold uppercase tracking-wide mt-1">Simple Filing</p>
-                        </div>
-                        <div class="text-2xl font-bold text-navy-900">$150</div>
-                    </div>
-                    <ul class="text-sm text-stone-600 space-y-2 mb-6">
-                        <li class="flex gap-2">
-                            <span class="text-forest-600 font-bold">✓</span> Federal + 1 State Return Included
-                        </li>
-                        <li class="flex gap-2">
-                            <span class="text-forest-600 font-bold">✓</span> Standard Deduction (No Itemizing)
-                        </li>
-                        <li class="flex gap-2">
-                            <span class="text-forest-600 font-bold">✓</span> W-2, Unemployment, Interest & Dividends
-                        </li>
-                        <li class="flex gap-2">
-                            <span class="text-forest-600 font-bold">✓</span> Includes Dependents & Student Loan Interest
-                        </li>
-                    </ul>
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="relative p-6 bg-stone-50 rounded-lg border border-stone-100">
+                    <div class="absolute -top-4 -left-3 w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold shadow">1</div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2 mt-2">Tell us about you</h3>
+                    <p class="text-sm text-stone-600">Fill out a short intake form. We'll confirm your package and price on a quick 15-minute call.</p>
                 </div>
-
-                <!-- Standard -->
-                <div class="border-2 border-navy-900 rounded-xl p-6 relative shadow-lg">
-                    <div class="absolute top-0 right-0 bg-navy-900 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h4 class="text-xl font-bold text-navy-900">Standard Return</h4>
-                            <p class="text-xs text-stone-500 font-semibold uppercase tracking-wide mt-1">Homeowners & Families</p>
-                        </div>
-                        <div class="text-2xl font-bold text-navy-900">$225</div>
-                    </div>
-                    <ul class="text-sm text-stone-600 space-y-2 mb-6">
-                        <li class="flex gap-2">
-                            <span class="text-forest-600 font-bold">✓</span> Federal + 1 State Return Included
-                        </li>
-                        <li class="flex gap-2">
-                            <span class="text-forest-600 font-bold">✓</span> Itemized Deductions (Mortgage, Taxes)
-                        </li>
-                        <li class="flex gap-2">
-                            <span class="text-forest-600 font-bold">✓</span> Education Credits & HSA Distributions
-                        </li>
-                        <li class="flex gap-2">
-                            <span class="text-forest-600 font-bold">✓</span> Investment Income & K-1s
-                        </li>
-                    </ul>
+                <div class="relative p-6 bg-stone-50 rounded-lg border border-stone-100">
+                    <div class="absolute -top-4 -left-3 w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold shadow">2</div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2 mt-2">Upload securely</h3>
+                    <p class="text-sm text-stone-600">You'll get access to our secure client portal &mdash; follow the checklist and snap photos of your documents.</p>
+                </div>
+                <div class="relative p-6 bg-stone-50 rounded-lg border border-stone-100">
+                    <div class="absolute -top-4 -left-3 w-10 h-10 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold shadow">3</div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2 mt-2">We prepare</h3>
+                    <p class="text-sm text-stone-600">We prepare your return and ask any follow-up questions through the portal. No office visit needed.</p>
+                </div>
+                <div class="relative p-6 bg-stone-50 rounded-lg border border-stone-100">
+                    <div class="absolute -top-4 -left-3 w-10 h-10 bg-forest-600 text-white rounded-full flex items-center justify-center font-bold shadow">4</div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2 mt-2">Review &amp; e-sign</h3>
+                    <p class="text-sm text-stone-600">Review your return, sign electronically from your phone, and pay up front or from your refund.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Add-ons Grid -->
-            <div class="grid md:grid-cols-3 gap-6 mb-12">
-                <!-- Business -->
-                <div class="border border-stone-200 rounded-lg p-5">
-                    <h5 class="font-bold text-navy-900 mb-2">Self-Employed / Business</h5>
-                    <p class="text-sm text-stone-600 mb-2">Schedule C preparation for freelancers or LLCs.</p>
-                    <div class="text-lg font-bold text-forest-600">Starts at +$200</div>
-                    <p class="text-[10px] text-stone-400 mt-1 italic">*Price depends on record organization.</p>
-                </div>
-
-                <!-- Rentals -->
-                <div class="border border-stone-200 rounded-lg p-5">
-                    <h5 class="font-bold text-navy-900 mb-2">Rental Properties</h5>
-                    <p class="text-sm text-stone-600 mb-2">Schedule E preparation for landlords.</p>
-                    <div class="text-lg font-bold text-forest-600">+$125 <span class="text-xs font-normal text-stone-500">per property</span></div>
-                </div>
-
-                <!-- States -->
-                <div class="border border-stone-200 rounded-lg p-5">
-                    <h5 class="font-bold text-navy-900 mb-2">Additional States</h5>
-                    <p class="text-sm text-stone-600 mb-2">For multi-state workers or moves.</p>
-                    <div class="text-lg font-bold text-forest-600">+$50 <span class="text-xs font-normal text-stone-500">per state</span></div>
-                </div>
-            </div>
-
-            <!-- Bank Product Feature -->
-            <div class="bg-navy-900 rounded-xl p-8 text-white relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-forest-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2"></div>
-                
-                <div class="md:flex justify-between items-center gap-8 relative z-10">
-                    <div class="mb-6 md:mb-0">
-                        <div class="inline-block bg-forest-600 text-[10px] font-bold px-2 py-1 rounded mb-3">PAYMENT OPTION</div>
-                        <h3 class="text-2xl font-bold mb-2">Pay With Your Refund</h3>
-                        <p class="text-stone-300 text-sm max-w-lg">
-                            Don't want to pay upfront? We offer a Bank Product service that allows you to deduct our fees directly from your refund.
-                        </p>
-                        <ul class="mt-4 space-y-2 text-sm text-stone-200">
-                            <li>• <strong>$0 Upfront Cost</strong> (Fees deducted later)</li>
-                            <li>• <strong>Refund Advance:</strong> Up to $1,000 at NO COST (0% APR) upon acceptance</li>
-                            <li>• <strong>Bank Product Fee:</strong> $82.90 flat fee</li>
-                        </ul>
-                        <p class="text-[10px] text-stone-500 mt-4 italic">*Subject to bank approval. Larger interest-bearing loans up to $7,000 available.</p>
-                    </div>
-                    <div>
-                        <div class="text-center bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10">
-                            <span class="block text-3xl font-bold text-forest-400">$0</span>
-                            <span class="text-xs text-stone-300">Due Today</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+    <!-- CTA -->
+    <section class="py-16 bg-navy-900 text-white">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-3">Ready for this tax season?</h2>
+            <p class="text-stone-300 mb-8">Returning clients: your prior-year return is already on file, so getting started takes minutes.</p>
+            <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="inline-block bg-forest-600 hover:bg-forest-700 font-bold py-3 px-8 rounded shadow-lg transition">Start Your Intake Form</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-navy-950 text-stone-400 py-12 mt-auto border-t border-navy-900">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-white font-bold text-xl mb-4">Hennig Financial LLC</h3>
-            <p class="text-sm mb-6">Ready to get started? <a href="mailto:ron@hennigfinancial.com" class="text-forest-400 hover:text-forest-300 underline">Email us</a> to book your 15-minute onboarding.</p>
-            
-            <div class="max-w-3xl mx-auto space-y-4 text-xs text-stone-500 mt-8 pt-8 border-t border-navy-800">
-                <p>Hennig Financial LLC is not a CPA firm and is not a law firm. We do not provide legal services, audit services, or unrestricted tax representation.</p>
-                <p>&copy; 2025 Hennig Financial LLC. All rights reserved.</p>
+    <footer class="bg-navy-950 text-stone-400 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <p class="text-white font-bold text-lg">Hennig Financial LLC</p>
+                <p class="mt-1">Tax, Accounting &amp; HR for individuals and small businesses.</p>
+                <p class="mt-3 text-xs">IRS Annual Filing Season Program &ndash; Record of Completion (2027 filing season)</p>
+            </div>
+            <div class="flex flex-col gap-2">
+                <a href="index.html#tax" class="hover:text-white transition">Tax Preparation</a>
+                <a href="accounting.html" class="hover:text-white transition">Accounting &amp; Payroll</a>
+                <a href="about.html" class="hover:text-white transition">About</a>
+                <a href="resources.html" class="hover:text-white transition">FAQ</a>
+                <a href="referral-program.html" class="hover:text-white transition">Referral Program</a>
+            </div>
+            <div>
+                <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="inline-block bg-forest-600 hover:bg-forest-700 text-white font-semibold px-5 py-2 rounded transition">Get Started</a>
+                <p class="mt-3">Questions? <span class="text-stone-300">ron@hennigfinancial.com</span></p>
+            </div>
+        </div>
+        <div class="border-t border-navy-900">
+            <div class="max-w-6xl mx-auto px-4 py-6 text-xs text-stone-500 space-y-2 text-center">
+                <p>Hennig Financial LLC is not a CPA firm and is not a law firm. We do not provide legal services, audit or attest services, or unlimited representation before the IRS.</p>
+                <p>&copy; 2026 Hennig Financial LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
