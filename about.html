@@ -3,151 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
+    <title>About | Hennig Financial LLC</title>
+    <meta name="description" content="Hennig Financial LLC brings audit-level rigor to tax, accounting, and HR for individuals and small businesses, with flat-rate pricing and a modern, secure process.">
 
-    <title>About Us - Hennig Financial LLC</title>
-    <!-- Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        stone: { 50: '#fafaf9', 100: '#f5f5f4', 200: '#e7e5e4', 800: '#292524', 900: '#1c1917' },
-                        navy: { 800: '#1e3a8a', 900: '#172554' },
-                        forest: { 600: '#059669', 700: '#047857' },
+                        navy: { 50: '#eff6ff', 100: '#dbeafe', 700: '#1e40af', 800: '#1e3a8a', 900: '#172554', 950: '#0f1a3d' },
+                        forest: { 50: '#ecfdf5', 100: '#d1fae5', 400: '#34d399', 500: '#10b981', 600: '#059669', 700: '#047857' }
                     },
                     fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
                 }
             }
         }
     </script>
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
 </head>
-<body class="bg-stone-50 text-stone-800 min-h-screen flex flex-col">
+<body class="bg-stone-50 text-stone-800 font-sans flex flex-col min-h-screen">
 
     <!-- Navigation -->
-    <header class="bg-navy-900 text-stone-50 shadow-md">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-            <div>
-                <a href="index.html" class="text-2xl font-bold tracking-tight hover:text-stone-200 transition">Hennig Financial LLC</a>
-                <p class="text-sm text-stone-300">Modern Tax, Bookkeeping & Payroll Support</p>
-            </div>
-            <div class="mt-4 md:mt-0 flex gap-4 text-sm">
-                <a href="index.html" class="hover:text-forest-400 transition">Services</a>
-                <a href="about.html" class="text-forest-400 font-medium">About</a>
-                <a href="resources.html" class="text-stone-300 hover:text-forest-400 transition font-medium">FAQ & Resources</a>
-                <a href="index.html#contact" class="bg-forest-600 hover:bg-forest-700 px-4 py-2 rounded font-semibold transition">Book Consultation</a>
-            </div>
+    <header class="bg-navy-900 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-3">
+                <span class="bg-white rounded-lg p-1"><img src="logo.png" alt="Hennig Financial logo" class="h-12 w-12 object-contain"></span>
+                <span>
+                    <span class="block text-xl font-bold tracking-tight">Hennig Financial LLC</span>
+                    <span class="block text-xs text-stone-300">Tax, Accounting &amp; HR</span>
+                </span>
+            </a>
+            <nav class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium">
+                <a href="index.html#tax" class="text-stone-300 hover:text-forest-400 transition">Tax Prep</a>
+                <a href="accounting.html" class="text-stone-300 hover:text-forest-400 transition">Accounting &amp; Payroll</a>
+                <a href="about.html" class="text-forest-400">About</a>
+                <a href="resources.html" class="text-stone-300 hover:text-forest-400 transition">FAQ</a>
+                <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="bg-forest-600 hover:bg-forest-700 text-white px-4 py-2 rounded shadow transition">Get Started</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-12 flex-grow max-w-4xl">
-        
-        <!-- Header -->
+    <main class="max-w-4xl mx-auto px-4 py-14 flex-grow">
+
         <div class="text-center mb-12">
-            <h1 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">About Hennig Financial</h1>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-navy-900 mb-4">About Hennig Financial</h1>
             <div class="w-24 h-1 bg-forest-600 mx-auto"></div>
-            <p class="text-stone-600 mt-4 text-lg">Modern financial services built on transparency, technology, and trust.</p>
+            <p class="text-stone-600 mt-4 text-lg">Audit-level rigor, small-business pricing.</p>
         </div>
 
-        <!-- Mission Section -->
-        <section class="bg-white rounded-lg shadow-md p-8 mb-10">
-            <div class="md:flex gap-8 items-center">
-                <div class="flex-1">
-                    <h2 class="text-2xl font-bold text-navy-800 mb-4">Our Mission</h2>
-                    <p class="text-stone-600 mb-4 leading-relaxed">
-                        We started Hennig Financial LLC to solve a simple problem: small business owners and individuals often feel underserved by traditional firms. They face hourly billing surprises, outdated systems, and a lack of proactive communication.
-                    </p>
-                    <p class="text-stone-600 leading-relaxed">
-                        Our approach is different. We combine **flat-rate, transparent pricing** with modern technology to provide stress-free tax preparation, bookkeeping, and payroll services. We believe you should know exactly what you're paying for and feel confident that your financials are in expert hands.
-                    </p>
-                </div>
-            </div>
+        <!-- Mission -->
+        <section class="bg-white rounded-xl shadow-sm border border-stone-200 p-8 mb-10">
+            <h2 class="text-2xl font-bold text-navy-900 mb-4">Why we exist</h2>
+            <p class="text-stone-600 mb-4 leading-relaxed">Small business owners and families are often underserved by traditional firms: hourly billing surprises, slow responses, and an accountant they only hear from in April.</p>
+            <p class="text-stone-600 leading-relaxed">We do it differently. Flat, published pricing. A secure digital process. And an ongoing partnership &mdash; bookkeeping, payroll, tax, and the people side of running a business &mdash; so you understand your numbers all year, not just at filing time.</p>
         </section>
 
-        <!-- Team Section -->
+        <!-- Team -->
         <section class="mb-12">
             <h2 class="text-2xl font-bold text-navy-900 mb-6 text-center">Meet the Team</h2>
             <div class="grid md:grid-cols-2 gap-6">
-                
-                <!-- Ron Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-navy-800">
+                <div class="bg-white rounded-xl shadow-sm p-6 border-t-4 border-navy-800">
                     <h3 class="text-xl font-bold text-navy-900">Ron</h3>
-                    <p class="text-sm text-forest-600 font-bold mb-3 uppercase tracking-wide">Owner & Tax Professional</p>
-                    <p class="text-stone-600 text-sm mb-4">
-                        As the founder of Hennig Financial, Ron brings extensive expertise in financial compliance and internal controls. Currently working as an auditor for large private and public companies with revenues exceeding $200M, Ron specializes in applying rigorous financial standards to small business tax compliance, operational efficiency, and helping owners truly understand their numbers.
-                    </p>
+                    <p class="text-sm text-forest-600 font-bold mb-3 uppercase tracking-wide">Owner &amp; Tax Professional</p>
+                    <p class="text-stone-600 text-sm mb-4">Ron founded Hennig Financial to give individuals and small business owners the same care larger companies get. By day he works in financial statement audit for private and public companies, and he brings that discipline to every client: clean reconciliations, documented processes, and numbers an owner can actually use.</p>
                     <ul class="text-xs text-stone-500 list-disc pl-4 space-y-1">
-                        <li>Current Auditor (Public/Private >$200M Revenue)</li>
-                        <li>Internal Controls & Compliance Expert</li>
-                        <li>Specializes in Small Business & Real Estate</li>
+                        <li>IRS Annual Filing Season Program &ndash; Record of Completion (2027 filing season)</li>
+                        <li>Background in financial statement audit and internal controls</li>
+                        <li>Focus: small businesses, real estate, and nonprofits</li>
                     </ul>
                 </div>
-
-                <!-- Mikaela Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-forest-600">
+                <div class="bg-white rounded-xl shadow-sm p-6 border-t-4 border-forest-600">
                     <h3 class="text-xl font-bold text-navy-900">Mikaela</h3>
-                    <p class="text-sm text-forest-600 font-bold mb-3 uppercase tracking-wide">Client Relations & Operations</p>
-                    <p class="text-stone-600 text-sm mb-4">
-                        Mikaela ensures that every client interaction is smooth and seamless. From onboarding to document management, she keeps the firm running efficiently so that our clients receive timely responses and support throughout the tax season and beyond.
-                    </p>
+                    <p class="text-sm text-forest-600 font-bold mb-3 uppercase tracking-wide">Client Relations &amp; Operations</p>
+                    <p class="text-stone-600 text-sm mb-4">Mikaela keeps every client interaction smooth, from onboarding to document management. She's your first point of contact for scheduling, portal questions, and making sure nothing falls through the cracks during tax season and beyond.</p>
                     <ul class="text-xs text-stone-500 list-disc pl-4 space-y-1">
-                        <li>Client Onboarding Specialist</li>
-                        <li>Communications & Scheduling</li>
-                        <li>Operational Support</li>
+                        <li>Client onboarding</li>
+                        <li>Scheduling &amp; communications</li>
+                        <li>Operational support</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Values Section -->
+        <!-- Values -->
         <section class="grid md:grid-cols-3 gap-6 mb-12">
             <div class="text-center p-4">
                 <div class="w-12 h-12 bg-navy-100 text-navy-800 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
-                <h3 class="font-bold text-navy-900 mb-2">Transparent Pricing</h3>
-                <p class="text-sm text-stone-600">No hourly billing surprises. We use flat fees for almost all services so you can budget effectively.</p>
+                <h3 class="font-bold text-navy-900 mb-2">Flat, published pricing</h3>
+                <p class="text-sm text-stone-600">No hourly billing. You'll know your price before we start.</p>
             </div>
             <div class="text-center p-4">
                 <div class="w-12 h-12 bg-navy-100 text-navy-800 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
-                <h3 class="font-bold text-navy-900 mb-2">Modern Tech</h3>
-                <p class="text-sm text-stone-600">We utilize secure cloud portals, digital signatures, and integrated software to save you time and paper.</p>
+                <h3 class="font-bold text-navy-900 mb-2">Secure &amp; digital</h3>
+                <p class="text-sm text-stone-600">A secure client portal and electronic signatures &mdash; no office visits or paper piles.</p>
             </div>
             <div class="text-center p-4">
                 <div class="w-12 h-12 bg-navy-100 text-navy-800 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
-                <h3 class="font-bold text-navy-900 mb-2">Proactive Support</h3>
-                <p class="text-sm text-stone-600">We don't just record history; we help you plan for the future with year-round support options.</p>
+                <h3 class="font-bold text-navy-900 mb-2">Year-round partnership</h3>
+                <p class="text-sm text-stone-600">We don't just record history. We help you plan ahead and run your business better.</p>
             </div>
         </section>
 
         <!-- CTA -->
-        <div class="bg-navy-900 text-stone-100 rounded-lg shadow-lg p-8 text-center">
-            <h2 class="text-2xl font-bold mb-4">Let's Get Your Finances on Track</h2>
-            <p class="text-stone-300 mb-6 max-w-2xl mx-auto">Whether you need a simple tax return or full-service bookkeeping and payroll, we have a plan that fits.</p>
-            <a href="index.html" class="inline-block bg-forest-600 hover:bg-forest-700 text-white font-bold py-3 px-8 rounded transition shadow-md">
-                Build Your Quote
-            </a>
+        <div class="bg-navy-900 text-white rounded-xl shadow-lg p-8 text-center">
+            <h2 class="text-2xl font-bold mb-3">Let's get your finances on track</h2>
+            <p class="text-stone-300 mb-6 max-w-2xl mx-auto">Whether you need a simple tax return or a full accounting partnership, there's a plan that fits.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-3">
+                <a href="index.html#tax" class="inline-block bg-white text-navy-900 font-bold py-3 px-6 rounded transition hover:bg-stone-100">Tax Packages</a>
+                <a href="accounting.html" class="inline-block bg-forest-600 hover:bg-forest-700 font-bold py-3 px-6 rounded transition">Accounting &amp; Payroll</a>
+            </div>
         </div>
-
     </main>
 
     <!-- Footer -->
-    <footer class="bg-navy-900 text-stone-400 py-8 mt-auto">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-white font-bold text-lg mb-2">Hennig Financial LLC</h3>
-            <div class="max-w-3xl mx-auto space-y-4 text-xs text-stone-500 mt-6 border-t border-stone-800 pt-6">
-                <p>
-                    Hennig Financial LLC is not a CPA firm and is not a law firm. We do not provide legal services, audit services, or unrestricted tax representation unless expressly agreed in writing.
-                </p>
+    <footer class="bg-navy-950 text-stone-400 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <p class="text-white font-bold text-lg">Hennig Financial LLC</p>
+                <p class="mt-1">Tax, Accounting &amp; HR for individuals and small businesses.</p>
+                <p class="mt-3 text-xs">IRS Annual Filing Season Program &ndash; Record of Completion (2027 filing season)</p>
             </div>
-            <p class="text-xs mt-6">&copy; 2025 Hennig Financial LLC. All rights reserved.</p>
+            <div class="flex flex-col gap-2">
+                <a href="index.html#tax" class="hover:text-white transition">Tax Preparation</a>
+                <a href="accounting.html" class="hover:text-white transition">Accounting &amp; Payroll</a>
+                <a href="about.html" class="hover:text-white transition">About</a>
+                <a href="resources.html" class="hover:text-white transition">FAQ</a>
+                <a href="referral-program.html" class="hover:text-white transition">Referral Program</a>
+            </div>
+            <div>
+                <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="inline-block bg-forest-600 hover:bg-forest-700 text-white font-semibold px-5 py-2 rounded transition">Get Started</a>
+                <p class="mt-3">Questions? <span class="text-stone-300">ron@hennigfinancial.com</span></p>
+            </div>
+        </div>
+        <div class="border-t border-navy-900">
+            <div class="max-w-6xl mx-auto px-4 py-6 text-xs text-stone-500 space-y-2 text-center">
+                <p>Hennig Financial LLC is not a CPA firm and is not a law firm. We do not provide legal services, audit or attest services, or unlimited representation before the IRS.</p>
+                <p>&copy; 2026 Hennig Financial LLC. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
 </body>
-
 </html>
-

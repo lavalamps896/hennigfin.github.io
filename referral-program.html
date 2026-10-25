@@ -4,150 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Referral Program | Hennig Financial LLC</title>
+    <meta name="description" content="Refer a friend or business to Hennig Financial LLC and earn a cash reward when they become a client.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        stone: { 50: '#fafaf9', 100: '#f5f5f4', 200: '#e7e5e4', 800: '#292524', 900: '#1c1917' },
-                        navy: { 800: '#1e3a8a', 900: '#172554' },
-                        forest: { 600: '#059669', 700: '#047857' },
-                        alert: { 500: '#f97316' }
+                        navy: { 50: '#eff6ff', 100: '#dbeafe', 700: '#1e40af', 800: '#1e3a8a', 900: '#172554', 950: '#0f1a3d' },
+                        forest: { 50: '#ecfdf5', 100: '#d1fae5', 400: '#34d399', 500: '#10b981', 600: '#059669', 700: '#047857' }
                     },
                     fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
                 }
             }
         }
     </script>
-    <style>body { font-family: 'Inter', sans-serif; }</style>
 </head>
-<body class="bg-stone-50 text-stone-800">
+<body class="bg-stone-50 text-stone-800 font-sans flex flex-col min-h-screen">
 
-    <!-- Navigation (Simplified) -->
-    <header class="bg-navy-900 text-stone-50 shadow-md">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <img src="logo.png" alt="Hennig Financial Logo" class="h-12 w-auto object-contain">
-                <div>
-                    <h1 class="text-xl font-bold tracking-tight text-white">Hennig Financial LLC</h1>
-                    <p class="text-xs text-stone-300">Referral Program</p>
-                </div>
-            </div>
-            <a href="index.html" class="text-sm text-stone-300 hover:text-white transition">Back to Home</a>
+    <!-- Navigation -->
+    <header class="bg-navy-900 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-3">
+                <span class="bg-white rounded-lg p-1"><img src="logo.png" alt="Hennig Financial logo" class="h-12 w-12 object-contain"></span>
+                <span>
+                    <span class="block text-xl font-bold tracking-tight">Hennig Financial LLC</span>
+                    <span class="block text-xs text-stone-300">Tax, Accounting &amp; HR</span>
+                </span>
+            </a>
+            <nav class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium">
+                <a href="index.html#tax" class="text-stone-300 hover:text-forest-400 transition">Tax Prep</a>
+                <a href="accounting.html" class="text-stone-300 hover:text-forest-400 transition">Accounting &amp; Payroll</a>
+                <a href="about.html" class="text-stone-300 hover:text-forest-400 transition">About</a>
+                <a href="resources.html" class="text-stone-300 hover:text-forest-400 transition">FAQ</a>
+                <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="bg-forest-600 hover:bg-forest-700 text-white px-4 py-2 rounded shadow transition">Get Started</a>
+            </nav>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-12 max-w-4xl">
-        
-        <!-- Hero Section -->
+    <main class="max-w-4xl mx-auto px-4 py-14 flex-grow">
+
         <div class="text-center mb-12">
-            <span class="bg-forest-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Trusted Partner Program</span>
-            <h2 class="text-4xl font-bold text-navy-900 mt-4 mb-4">Share Trust. Earn Rewards.</h2>
-            <p class="text-lg text-stone-600 max-w-2xl mx-auto">
-                Do you know a business owner or individual who needs reliable financial support? 
-                Refer them to Hennig Financial and earn cash rewards while they get exclusive discounts.
-            </p>
+            <span class="bg-forest-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Referral Program</span>
+            <h1 class="text-4xl font-extrabold text-navy-900 mt-4 mb-4">Share trust. Earn rewards.</h1>
+            <p class="text-lg text-stone-600 max-w-2xl mx-auto">Know someone who needs reliable tax or accounting help? Send them our way &mdash; they'll get a welcome discount, and you'll earn a cash reward.</p>
         </div>
 
-        <!-- The Code Card -->
-        <div class="bg-white border-2 border-navy-800 rounded-xl p-8 shadow-lg mb-12 text-center relative overflow-hidden">
-            <div class="absolute top-0 right-0 bg-navy-800 text-white text-xs font-bold px-4 py-2 rounded-bl-xl">SHARE THIS CODE</div>
-            <p class="text-stone-500 text-sm uppercase tracking-widest font-semibold mb-2">Your Referral Code</p>
-            <div class="text-5xl font-mono font-bold text-forest-600 tracking-wider mb-2 select-all">TRUSTED26</div>
-            <p class="text-stone-400 text-xs">(Tap code to copy)</p>
-        </div>
-
-        <!-- Rewards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            
-            <!-- What THEY Get -->
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="bg-forest-100 p-2 rounded-full text-forest-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-navy-900">What They Get</h3>
-                </div>
+        <div class="grid md:grid-cols-2 gap-8 mb-14">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                <h2 class="text-xl font-bold text-navy-900 mb-4">What they get</h2>
                 <ul class="space-y-3 text-stone-600">
-                    <li class="flex justify-between border-b border-stone-100 pb-2">
-                        <span>Tax Preparation</span>
-                        <span class="font-bold text-forest-600">15% Off</span>
-                    </li>
-                    <li class="flex justify-between border-b border-stone-100 pb-2">
-                        <span>Bookkeeping (First 3 Mos)</span>
-                        <span class="font-bold text-forest-600">15% Off</span>
-                    </li>
-                    <li class="flex justify-between">
-                        <span>Consulting & Formation</span>
-                        <span class="font-bold text-forest-600">$50 Off</span>
-                    </li>
+                    <li class="flex justify-between border-b border-stone-100 pb-2"><span>Tax preparation</span><span class="font-bold text-forest-600">15% off</span></li>
+                    <li class="flex justify-between"><span>Accounting retainer (first 3 months)</span><span class="font-bold text-forest-600">15% off</span></li>
                 </ul>
             </div>
-
-            <!-- What YOU Get -->
-            <div class="bg-navy-900 p-6 rounded-lg shadow-sm text-white">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="bg-navy-700 p-2 rounded-full text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                    </div>
-                    <h3 class="text-xl font-bold">What You Earn</h3>
-                </div>
+            <div class="bg-navy-900 p-6 rounded-xl shadow-sm text-white">
+                <h2 class="text-xl font-bold mb-4">What you earn</h2>
                 <ul class="space-y-3 text-stone-300">
-                    <li class="flex justify-between border-b border-navy-700 pb-2">
-                        <span>Per Tax Client Referred</span>
-                        <span class="font-bold text-white text-lg">$25</span>
-                    </li>
-                    <li class="flex justify-between">
-                        <span>Per Business Client Referred</span>
-                        <span class="font-bold text-white text-lg">$50</span>
-                    </li>
+                    <li class="flex justify-between border-b border-navy-700 pb-2"><span>Per tax client referred</span><span class="font-bold text-white text-lg">$25</span></li>
+                    <li class="flex justify-between"><span>Per business client referred</span><span class="font-bold text-white text-lg">$50</span></li>
                 </ul>
-                <p class="text-xs text-stone-400 mt-4 italic">* Paid after the new client pays their invoice.</p>
+                <p class="text-xs text-stone-400 mt-4 italic">Paid after the new client pays their first invoice.</p>
             </div>
         </div>
 
-        <!-- How It Works -->
-        <div class="mb-16">
-            <h3 class="text-2xl font-bold text-navy-900 mb-6 text-center">How It Works</h3>
+        <div class="mb-14">
+            <h2 class="text-2xl font-bold text-navy-900 mb-6 text-center">How it works</h2>
             <div class="flex flex-col md:flex-row gap-6">
                 <div class="flex-1 text-center">
                     <div class="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-stone-600 mx-auto mb-3">1</div>
-                    <h4 class="font-bold text-lg mb-2">Share the Code</h4>
-                    <p class="text-sm text-stone-600">Give your friend the code <span class="font-mono font-bold">TRUSTED26</span>.</p>
+                    <h3 class="font-bold text-lg mb-2">Tell a friend</h3>
+                    <p class="text-sm text-stone-600">Send them a link to our <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="underline text-navy-800">intake form</a>.</p>
                 </div>
                 <div class="flex-1 text-center">
                     <div class="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-stone-600 mx-auto mb-3">2</div>
-                    <h4 class="font-bold text-lg mb-2">They Request a Quote</h4>
-                    <p class="text-sm text-stone-600">They enter the code & <strong>Your Name</strong> in the "Referred By" box on our site.</p>
+                    <h3 class="font-bold text-lg mb-2">They name you</h3>
+                    <p class="text-sm text-stone-600">They enter <strong>your name</strong> in the &ldquo;Referred by&rdquo; question on the form.</p>
                 </div>
                 <div class="flex-1 text-center">
                     <div class="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-stone-600 mx-auto mb-3">3</div>
-                    <h4 class="font-bold text-lg mb-2">You Get Paid</h4>
-                    <p class="text-sm text-stone-600">Once they pay their first invoice, we send you your cash reward.</p>
+                    <h3 class="font-bold text-lg mb-2">You get paid</h3>
+                    <p class="text-sm text-stone-600">Once they pay their first invoice, we send your reward.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Terms and Conditions -->
-        <div class="bg-stone-100 rounded-lg p-8 border-t-4 border-stone-300">
-            <h3 class="text-lg font-bold text-stone-700 mb-4 uppercase tracking-wider">Terms & Conditions</h3>
-            <div class="text-sm text-stone-600 space-y-3 columns-1 md:columns-2 gap-8">
-                <p><strong>Eligibility:</strong> The referral program is open to existing clients and professional partners of Hennig Financial LLC.</p>
-                <p><strong>New Clients Only:</strong> The person referred must be a new client who has not used Hennig Financial services in the past 24 months.</p>
-                <p><strong>Payout Timing:</strong> Referral rewards are processed and paid within 30 days after the referred client has paid their invoice in full.</p>
-                <p><strong>Bookkeeping Cap:</strong> The 15% bookkeeping discount applies to the first three (3) months of service only. Standard rates apply thereafter.</p>
-                <p><strong>Business Referrals:</strong> The $50 reward applies to Bookkeeping (monthly recurring) or Consulting/Formation (Tier 2 or 3) services.</p>
-                <p><strong>Self-Referrals:</strong> You cannot refer yourself or a business in which you are the primary owner.</p>
-                <p><strong>Code Usage:</strong> The new client must enter the code TRUSTED26 and your name at the time of the quote request. Retroactive referrals are not guaranteed.</p>
-                <p><strong>Modification:</strong> Hennig Financial LLC reserves the right to modify or terminate this program at any time without prior notice.</p>
+        <div class="bg-stone-100 rounded-xl p-8 border-t-4 border-stone-300">
+            <h2 class="text-lg font-bold text-stone-700 mb-4 uppercase tracking-wider">Terms &amp; Conditions</h2>
+            <div class="text-sm text-stone-600 space-y-3 md:columns-2 gap-8">
+                <p><strong>Eligibility:</strong> Open to existing clients and professional partners of Hennig Financial LLC.</p>
+                <p><strong>New clients only:</strong> The person referred must not have used Hennig Financial services in the past 24 months.</p>
+                <p><strong>Payout timing:</strong> Rewards are paid within 30 days after the referred client pays their first invoice in full.</p>
+                <p><strong>Business referrals:</strong> The $50 reward applies to new accounting retainer or payroll clients.</p>
+                <p><strong>Retainer discount:</strong> The 15% retainer discount applies to the first three (3) months of service only.</p>
+                <p><strong>Self-referrals:</strong> You cannot refer yourself or a business you primarily own.</p>
+                <p><strong>Timing:</strong> Your name must be provided on the intake form. Retroactive referrals are not guaranteed.</p>
+                <p><strong>Changes:</strong> Hennig Financial LLC may modify or end this program at any time.</p>
             </div>
         </div>
-
     </main>
 
-    <footer class="bg-navy-900 text-stone-400 py-8 mt-12 text-center text-xs">
-        <p>&copy; 2025 Hennig Financial LLC. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-navy-950 text-stone-400 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <p class="text-white font-bold text-lg">Hennig Financial LLC</p>
+                <p class="mt-1">Tax, Accounting &amp; HR for individuals and small businesses.</p>
+                <p class="mt-3 text-xs">IRS Annual Filing Season Program &ndash; Record of Completion (2027 filing season)</p>
+            </div>
+            <div class="flex flex-col gap-2">
+                <a href="index.html#tax" class="hover:text-white transition">Tax Preparation</a>
+                <a href="accounting.html" class="hover:text-white transition">Accounting &amp; Payroll</a>
+                <a href="about.html" class="hover:text-white transition">About</a>
+                <a href="resources.html" class="hover:text-white transition">FAQ</a>
+                <a href="referral-program.html" class="hover:text-white transition">Referral Program</a>
+            </div>
+            <div>
+                <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="inline-block bg-forest-600 hover:bg-forest-700 text-white font-semibold px-5 py-2 rounded transition">Get Started</a>
+                <p class="mt-3">Questions? <span class="text-stone-300">ron@hennigfinancial.com</span></p>
+            </div>
+        </div>
+        <div class="border-t border-navy-900">
+            <div class="max-w-6xl mx-auto px-4 py-6 text-xs text-stone-500 space-y-2 text-center">
+                <p>Hennig Financial LLC is not a CPA firm and is not a law firm. We do not provide legal services, audit or attest services, or unlimited representation before the IRS.</p>
+                <p>&copy; 2026 Hennig Financial LLC. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
 </body>

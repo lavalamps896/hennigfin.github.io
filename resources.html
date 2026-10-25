@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ & Resources - Hennig Financial LLC</title>
-    <meta name="robots" content="noindex">
+    <title>FAQ | Hennig Financial LLC</title>
+    <meta name="description" content="Answers about our credentials, tax packages, paying from your refund, accounting retainers, payroll, and getting started with Hennig Financial LLC.">
 
-    <!-- Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        stone: { 50: '#fafaf9', 100: '#f5f5f4', 200: '#e7e5e4', 800: '#292524', 900: '#1c1917' },
-                        navy: { 800: '#1e3a8a', 900: '#172554' },
-                        forest: { 600: '#059669', 700: '#047857' },
+                        navy: { 50: '#eff6ff', 100: '#dbeafe', 700: '#1e40af', 800: '#1e3a8a', 900: '#172554', 950: '#0f1a3d' },
+                        forest: { 50: '#ecfdf5', 100: '#d1fae5', 400: '#34d399', 500: '#10b981', 600: '#059669', 700: '#047857' }
                     },
                     fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
                 }
@@ -23,138 +24,168 @@
         }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .faq-question { transition: background-color 0.3s; }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out; }
+        details summary { list-style: none; cursor: pointer; }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] .chev { transform: rotate(45deg); }
     </style>
 </head>
-<body class="bg-stone-50 text-stone-800 min-h-screen flex flex-col">
+<body class="bg-stone-50 text-stone-800 font-sans flex flex-col min-h-screen">
 
     <!-- Navigation -->
-    <header class="bg-navy-900 text-stone-50 shadow-md">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-            <div>
-                <a href="index.html" class="text-2xl font-bold tracking-tight hover:text-stone-200 transition">Hennig Financial LLC</a>
-                <p class="text-sm text-stone-300">Modern Tax, Bookkeeping & Payroll Support</p>
-            </div>
-            <div class="mt-4 md:mt-0 flex gap-4 text-sm">
-                <a href="index.html" class="hover:text-forest-400 transition">Services</a>
-                <a href="about.html" class="text-stone-300 hover:text-forest-400 transition font-medium">About</a>
-                <a href="resources.html" class="text-forest-400 font-medium">FAQ & Resources</a>
-                <a href="index.html#contact" class="bg-forest-600 hover:bg-forest-700 px-4 py-2 rounded font-semibold transition">Book Consultation</a>
-            </div>
+    <header class="bg-navy-900 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-3">
+                <span class="bg-white rounded-lg p-1"><img src="logo.png" alt="Hennig Financial logo" class="h-12 w-12 object-contain"></span>
+                <span>
+                    <span class="block text-xl font-bold tracking-tight">Hennig Financial LLC</span>
+                    <span class="block text-xs text-stone-300">Tax, Accounting &amp; HR</span>
+                </span>
+            </a>
+            <nav class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium">
+                <a href="index.html#tax" class="text-stone-300 hover:text-forest-400 transition">Tax Prep</a>
+                <a href="accounting.html" class="text-stone-300 hover:text-forest-400 transition">Accounting &amp; Payroll</a>
+                <a href="about.html" class="text-stone-300 hover:text-forest-400 transition">About</a>
+                <a href="resources.html" class="text-forest-400">FAQ</a>
+                <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="bg-forest-600 hover:bg-forest-700 text-white px-4 py-2 rounded shadow transition">Get Started</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-12 flex-grow max-w-4xl">
+    <main class="max-w-4xl mx-auto px-4 py-14 flex-grow w-full">
         <div class="text-center mb-12">
-            <h1 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">FAQ & Resource Center</h1>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-navy-900 mb-4">Frequently Asked Questions</h1>
             <div class="w-24 h-1 bg-forest-600 mx-auto"></div>
-            <p class="text-stone-600 mt-4">Quick answers to common questions about our structure, pricing, and services.</p>
+            <p class="text-stone-600 mt-4">Quick answers about who we are, what we charge, and how it works.</p>
         </div>
 
-        <section class="space-y-6">
+        <div class="space-y-8">
 
-            <!-- SERVICE & STRUCTURE FAQ -->
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-xl font-bold text-navy-800 mb-4 border-b pb-2">Service Scope and Credentials</h2>
-                <div class="space-y-2 text-sm">
-                    
-                    <div class="faq-question border-b border-stone-100 py-3 cursor-pointer" onclick="toggleAnswer(this)">
-                        <span class="font-semibold text-navy-900">Are you a CPA firm or a Law Firm?</span>
-                        <div class="faq-answer mt-2 text-stone-600 pl-4">
-                            No. Hennig Financial LLC is neither a CPA firm nor a law firm. We specialize in tax preparation, bookkeeping, and consulting services. We do not provide legal advice or financial statement audit/review services.
+            <!-- Credentials & scope -->
+            <section class="bg-white rounded-xl shadow-sm border border-stone-200 p-6">
+                <h2 class="text-xl font-bold text-navy-900 mb-2">Credentials &amp; Scope</h2>
+                <div class="divide-y divide-stone-100 text-sm">
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">Are you a CPA firm or a law firm?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <p class="mt-3 text-stone-600">No. Hennig Financial LLC is neither a CPA firm nor a law firm. We provide tax preparation, bookkeeping, payroll, and business support services. We do not provide legal advice or financial statement audit or review services.</p>
+                    </details>
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">What is the AFSP Record of Completion?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <p class="mt-3 text-stone-600">The IRS Annual Filing Season Program (AFSP) is a voluntary program for tax preparers who complete annual continuing education, including a federal tax law refresher course and exam, and agree to follow IRS practice standards. Ron holds a Record of Completion for the 2027 filing season and renews it every year.</p>
+                    </details>
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">Can you represent me if the IRS contacts me?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <div class="mt-3 text-stone-600 space-y-3">
+                            <p>For returns we prepared and signed, yes &mdash; within limits. As an AFSP Record of Completion holder, Ron can represent you before IRS revenue agents (examinations), customer service representatives, and the Taxpayer Advocate Service.</p>
+                            <p>We cannot represent you before IRS Appeals or Collections, or on returns we didn't prepare. For those situations, we'll help you organize documents and refer you to a CPA, enrolled agent, or attorney.</p>
                         </div>
-                    </div>
-
-                    <div class="faq-question border-b border-stone-100 py-3 cursor-pointer" onclick="toggleAnswer(this)">
-                        <span class="font-semibold text-navy-900">What authority do you have to deal with the IRS?</span>
-                        <div class="faq-answer mt-2 text-stone-600 pl-4">
-                            As a non-credentialed tax preparer, Hennig Financial has very limited representation rights. We cannot represent you before the IRS on matters such as audits or appeals. However, we can assist you in preparing responses or organizing documents for you to submit. If you require full representation (Power of Attorney), we have partnered with Protection Plus to provide their $1M Audit Defense and Identity Restoration Services. 
-                        </div>
-                    </div>
-
-                    <div class="faq-question border-b border-stone-100 py-3 cursor-pointer" onclick="toggleAnswer(this)">
-                        <span class="font-semibold text-navy-900">What types of businesses are NOT a fit for your services?</span>
-                        <div class="faq-answer mt-2 text-stone-600 pl-4">
-                            We specialize in simplified services for individuals and small businesses. We **cannot** accept clients who require audited financial statements, have annual revenues over $5 million, are publicly traded, or have complex international tax structures. Please see the Service Scope on the Pricing tab for a full list of exclusions.
-                        </div>
-                    </div>
+                    </details>
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">Who is not a good fit for your services?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <p class="mt-3 text-stone-600">We focus on individuals and small businesses. We can't take on clients who need audited or reviewed financial statements, have annual revenue over $1 million, are publicly traded, or have complex international tax situations.</p>
+                    </details>
                 </div>
-            </div>
+            </section>
 
-            <!-- PRICING & PAYMENT FAQ (UPDATED) -->
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-xl font-bold text-navy-800 mb-4 border-b pb-2">Pricing and Discounts</h2>
-                <div class="space-y-2 text-sm">
-                    
-                    <div class="faq-question border-b border-stone-100 py-3 cursor-pointer" onclick="toggleAnswer(this)">
-                        <span class="font-semibold text-navy-900">Can I pay my tax preparation fees out of my refund?</span>
-                        <div class="faq-answer mt-2 text-stone-600 pl-4">
-                            Yes. We partner with a bank to offer a "Pay With My Refund" option (Bank Product) for a base fee of <strong>$82.90</strong>. This allows our preparation fees to be deducted directly from your refund, so you pay nothing upfront.
-                            <br><br>
-                            <strong>Refund Advance:</strong> Qualified taxpayers can apply for a Refund Advance of up to <strong>$1,000 at NO COST</strong> (0% APR) once the IRS acknowledges the return. Larger interest-bearing loans (up to $7,000) are also available subject to bank approval.
-                            <br><br>
-                            <strong>Disbursement Methods:</strong> Funds can be received via Direct Deposit, FasterMoney® Visa Prepaid Card, or Check. 
-                            <br><br>
-                            <em>Note: Card and check printing fees may apply. We will review the full bank fee schedule with you prior to signing so there are no surprises.</em>
+            <!-- Tax prep -->
+            <section class="bg-white rounded-xl shadow-sm border border-stone-200 p-6">
+                <h2 class="text-xl font-bold text-navy-900 mb-2">Tax Preparation</h2>
+                <div class="divide-y divide-stone-100 text-sm">
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">Which tax package do I need?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <div class="mt-3 text-stone-600 space-y-2">
+                            <p><strong>Essential ($150):</strong> W-2s, unemployment, interest and dividends, Social Security, simple retirement income, the standard deduction, dependents, EITC, and education credits.</p>
+                            <p><strong>Complete ($225):</strong> choose this if you itemize, sold investments or crypto, own a rental property, or received a K-1, 1095-A, or HSA form.</p>
+                            <p><strong>Self-Employed ($350):</strong> choose this if you had freelance or business income and your records are organized.</p>
+                            <p>Every package includes your federal return and all state returns. Not sure? We'll confirm your package and price on your onboarding call before any work begins.</p>
                         </div>
-                    </div>
-
-                    <div class="faq-question border-b border-stone-100 py-3 cursor-pointer" onclick="toggleAnswer(this)">
-                        <span class="font-semibold text-navy-900">Why do some services cost more if my records are messy?</span>
-                        <div class="faq-answer mt-2 text-stone-600 pl-4">
-                            Pricing for items like Schedule C preparation increases if we have to spend multiple hours organizing bank statements, categorizing transactions, or reconciling funds. Our interactive calculator prices services based on **clean, summarized data**, which is why cleanup fees are often required upfront.
-                        </div>
-                    </div>
-
-                    <div class="faq-question border-b border-stone-100 py-3 cursor-pointer" onclick="toggleAnswer(this)">
-                        <span class="font-semibold text-navy-900">How can I find out if I qualify for a discount?</span>
-                        <div class="faq-answer mt-2 text-stone-600 pl-4">
-                            We offer limited promotional discounts for early clients, specific community members, and local businesses in the New Jersey area. These discounts are applied via a unique access code on the quote estimator. Please feel free to reach out to Ron or Mikaela directly to see if any discount codes are currently available for your situation.
-                        </div>
-                    </div>
+                    </details>
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">What counts as &ldquo;organized records&rdquo; for the Self-Employed package?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <p class="mt-3 text-stone-600">A profit &amp; loss summary or bookkeeping report showing your income and your expenses totaled by category. If you'd be handing us raw bank statements and receipts to sort through, you'll need a <a href="accounting.html#projects" class="underline text-navy-800">cleanup project</a> first &mdash; or an accounting retainer so it's handled all year.</p>
+                    </details>
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">Can I pay my fee out of my refund?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <p class="mt-3 text-stone-600">Yes. Through our bank partner, EPS Financial, your preparation fee can be deducted from your federal refund so you pay nothing up front. EPS charges a <strong>$39.95</strong> processing fee for this service, which is also deducted from your refund. We do not offer refund advances or refund loans. We'll walk you through the details before you sign.</p>
+                    </details>
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">Do you prepare business and nonprofit returns?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <p class="mt-3 text-stone-600">Yes. S-corporation (1120-S) and partnership (1065) returns start at $750 and are included with any <a href="accounting.html" class="underline text-navy-800">accounting retainer</a>. We also prepare Form 990-EZ and 990 for nonprofits, with reduced community pricing for small, volunteer-run organizations.</p>
+                    </details>
                 </div>
+            </section>
+
+            <!-- Accounting & payroll -->
+            <section class="bg-white rounded-xl shadow-sm border border-stone-200 p-6">
+                <h2 class="text-xl font-bold text-navy-900 mb-2">Accounting &amp; Payroll</h2>
+                <div class="divide-y divide-stone-100 text-sm">
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">Do I need QuickBooks?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <p class="mt-3 text-stone-600">No. If you already use QuickBooks Online, we'll work in your file. If you'd rather not pay for software, we'll maintain your books in our own system and send you the reports.</p>
+                    </details>
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">How do retainers work?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <p class="mt-3 text-stone-600">Retainers are a flat monthly fee for a 12-month engagement. Your business tax return is included. If service ends before 12 months, the return is billed at our standard rate. &ldquo;From&rdquo; prices depend on your transaction volume and number of accounts, and we'll confirm your exact monthly rate before you start.</p>
+                    </details>
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">Why do messy records cost more?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <p class="mt-3 text-stone-600">Our flat prices assume records are current. If we need to categorize months of transactions or reconcile accounts from scratch, that's a separate cleanup project, quoted up front after a free review.</p>
+                    </details>
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">Do you hold my payroll tax money?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <p class="mt-3 text-stone-600">No. Payroll taxes are paid directly from your business bank account. We handle the calculations, filings, and deadlines, but we never hold your funds.</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Getting started -->
+            <section class="bg-white rounded-xl shadow-sm border border-stone-200 p-6">
+                <h2 class="text-xl font-bold text-navy-900 mb-2">Getting Started</h2>
+                <div class="divide-y divide-stone-100 text-sm">
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">How do I get started?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <p class="mt-3 text-stone-600">Fill out our short <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="underline text-navy-800">intake form</a>. Ron or Mikaela will follow up to schedule a 15-minute call, confirm your price, and send you access to our secure client portal.</p>
+                    </details>
+                    <details class="py-4">
+                        <summary class="flex justify-between gap-4 font-semibold text-navy-900">How do I send you my documents?<span class="chev transition text-stone-400 text-lg leading-none">+</span></summary>
+                        <p class="mt-3 text-stone-600">Through our secure client portal &mdash; never by regular email. Please don't include Social Security numbers or tax documents in the intake form; we'll collect those securely once you're set up.</p>
+                    </details>
+                </div>
+            </section>
+
+            <div class="text-center pt-4">
+                <h2 class="text-xl font-bold text-navy-900 mb-4">Still have questions?</h2>
+                <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="inline-block bg-forest-600 hover:bg-forest-700 text-white font-bold py-3 px-8 rounded shadow transition">Start Your Intake Form</a>
             </div>
-
-
-            <!-- Resources Footer -->
-            <div class="text-center pt-8">
-                <h3 class="text-xl font-bold text-navy-800 mb-3">Ready to Start?</h3>
-                <a href="index.html#contact" class="bg-forest-600 hover:bg-forest-700 text-white font-bold py-3 px-8 rounded transition shadow-md">
-                    Request Your Custom Quote
-                </a>
-            </div>
-
-        </section>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-navy-900 text-stone-400 py-8 mt-auto">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-white font-bold text-lg mb-2">Hennig Financial LLC</h3>
-            <div class="max-w-3xl mx-auto space-y-4 text-xs text-stone-500 mt-6 border-t border-stone-800 pt-6">
-                <p>
-                    Hennig Financial LLC is not a CPA firm and is not a law firm. We do not provide legal services, audit services, or unrestricted tax representation unless expressly agreed in writing.
-                </p>
+    <footer class="bg-navy-950 text-stone-400 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <p class="text-white font-bold text-lg">Hennig Financial LLC</p>
+                <p class="mt-1">Tax, Accounting &amp; HR for individuals and small businesses.</p>
+                <p class="mt-3 text-xs">IRS Annual Filing Season Program &ndash; Record of Completion (2027 filing season)</p>
             </div>
-            <p class="text-xs mt-6">&copy; 2025 Hennig Financial LLC. All rights reserved.</p>
+            <div class="flex flex-col gap-2">
+                <a href="index.html#tax" class="hover:text-white transition">Tax Preparation</a>
+                <a href="accounting.html" class="hover:text-white transition">Accounting &amp; Payroll</a>
+                <a href="about.html" class="hover:text-white transition">About</a>
+                <a href="resources.html" class="hover:text-white transition">FAQ</a>
+                <a href="referral-program.html" class="hover:text-white transition">Referral Program</a>
+            </div>
+            <div>
+                <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="inline-block bg-forest-600 hover:bg-forest-700 text-white font-semibold px-5 py-2 rounded transition">Get Started</a>
+                <p class="mt-3">Questions? <span class="text-stone-300">ron@hennigfinancial.com</span></p>
+            </div>
+        </div>
+        <div class="border-t border-navy-900">
+            <div class="max-w-6xl mx-auto px-4 py-6 text-xs text-stone-500 space-y-2 text-center">
+                <p>Hennig Financial LLC is not a CPA firm and is not a law firm. We do not provide legal services, audit or attest services, or unlimited representation before the IRS.</p>
+                <p>&copy; 2026 Hennig Financial LLC. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        function toggleAnswer(element) {
-            const answer = element.querySelector('.faq-answer');
-            answer.classList.toggle('open');
-            if (answer.classList.contains('open')) {
-                answer.style.maxHeight = answer.scrollHeight + "px";
-            } else {
-                answer.style.maxHeight = "0";
-            }
-        }
-    </script>
 </body>
-
 </html>
-

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounting &amp; Payroll | Hennig Financial LLC</title>
+    <meta name="description" content="Monthly accounting partnership for small businesses: bookkeeping, payroll, and your business tax return on one flat retainer. QuickBooks Online or no-subscription books.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 50: '#eff6ff', 100: '#dbeafe', 700: '#1e40af', 800: '#1e3a8a', 900: '#172554', 950: '#0f1a3d' },
+                        forest: { 50: '#ecfdf5', 100: '#d1fae5', 400: '#34d399', 500: '#10b981', 600: '#059669', 700: '#047857' }
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <header class="bg-navy-900 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-3">
+                <span class="bg-white rounded-lg p-1"><img src="logo.png" alt="Hennig Financial logo" class="h-12 w-12 object-contain"></span>
+                <span>
+                    <span class="block text-xl font-bold tracking-tight">Hennig Financial LLC</span>
+                    <span class="block text-xs text-stone-300">Tax, Accounting &amp; HR</span>
+                </span>
+            </a>
+            <nav class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium">
+                <a href="index.html#tax" class="text-stone-300 hover:text-forest-400 transition">Tax Prep</a>
+                <a href="accounting.html" class="text-forest-400">Accounting &amp; Payroll</a>
+                <a href="about.html" class="text-stone-300 hover:text-forest-400 transition">About</a>
+                <a href="resources.html" class="text-stone-300 hover:text-forest-400 transition">FAQ</a>
+                <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="bg-forest-600 hover:bg-forest-700 text-white px-4 py-2 rounded shadow transition">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-white border-b border-stone-200">
+        <div class="max-w-4xl mx-auto px-4 py-16 text-center">
+            <p class="text-xs font-bold text-forest-600 tracking-widest uppercase mb-3">Accounting Partnership</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-navy-900 mb-5 leading-tight">Your books, payroll, and business taxes &mdash; handled.</h1>
+            <p class="text-lg text-stone-600 max-w-2xl mx-auto">One flat monthly retainer. One person who knows your business. Your business tax return is included, so tax season is just another month.</p>
+        </div>
+    </section>
+
+    <!-- Software choice -->
+    <section class="bg-stone-50 pt-12">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white rounded-xl border border-stone-200 p-5">
+                    <h2 class="font-bold text-navy-900">Already on QuickBooks Online?</h2>
+                    <p class="text-sm text-stone-600 mt-1">We work directly in your file, so you keep full access to your numbers.</p>
+                </div>
+                <div class="bg-white rounded-xl border border-stone-200 p-5">
+                    <h2 class="font-bold text-navy-900">Rather not pay for software?</h2>
+                    <p class="text-sm text-stone-600 mt-1">We'll maintain your books in our own system &mdash; no subscription required. You get the reports.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Retainer tiers -->
+    <section class="py-14 bg-stone-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-navy-900">Monthly Retainers</h2>
+                <p class="text-stone-500 mt-2">Flat monthly pricing, confirmed before you start.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 items-stretch">
+                <!-- Essentials -->
+                <div class="bg-white rounded-xl border border-stone-200 p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-navy-900">Essentials</h3>
+                    <p class="text-xs text-stone-500 font-semibold uppercase tracking-wide mt-1">New &amp; low-volume businesses</p>
+                    <p class="my-5"><span class="text-sm text-stone-500">from</span> <span class="text-4xl font-extrabold text-navy-900">$150</span><span class="text-stone-500">/mo</span></p>
+                    <ul class="text-sm text-stone-600 space-y-2 flex-grow">
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Bookkeeping &amp; reconciliations, kept current quarterly</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Quarterly profit &amp; loss and balance sheet</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Year-end tax-ready package</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Business tax return included*</li>
+                    </ul>
+                </div>
+
+                <!-- Partner -->
+                <div class="bg-white rounded-xl border-2 border-navy-900 p-6 flex flex-col relative shadow-lg">
+                    <span class="absolute top-0 right-0 bg-navy-900 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">MOST POPULAR</span>
+                    <h3 class="text-xl font-bold text-navy-900">Partner</h3>
+                    <p class="text-xs text-stone-500 font-semibold uppercase tracking-wide mt-1">Established businesses with a team</p>
+                    <p class="my-5"><span class="text-sm text-stone-500">from</span> <span class="text-4xl font-extrabold text-navy-900">$400</span><span class="text-stone-500">/mo</span></p>
+                    <p class="text-sm font-semibold text-navy-900 mb-2">Everything in Essentials, plus:</p>
+                    <ul class="text-sm text-stone-600 space-y-2 flex-grow">
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Monthly bookkeeping &amp; reporting</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Payroll for up to 5 employees included</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Sales tax filings</li>
+                        <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Quarterly review call &amp; estimated tax check-ins</li>
+                    </ul>
+                </div>
+
+                <!-- Full Partnership -->
+                <div class="bg-navy-900 text-white rounded-xl p-6 flex flex-col">
+                    <h3 class="text-xl font-bold">Full Partnership</h3>
+                    <p class="text-xs text-stone-300 font-semibold uppercase tracking-wide mt-1">Owners who want a back office</p>
+                    <p class="my-5"><span class="text-sm text-stone-300">from</span> <span class="text-4xl font-extrabold">$700</span><span class="text-stone-300">/mo</span></p>
+                    <p class="text-sm font-semibold mb-2">Everything in Partner, plus:</p>
+                    <ul class="text-sm text-stone-200 space-y-2 flex-grow">
+                        <li class="flex gap-2"><span class="text-forest-400 font-bold">✓</span> Owner's individual tax return included</li>
+                        <li class="flex gap-2"><span class="text-forest-400 font-bold">✓</span> Operations &amp; people support: employee reviews, onboarding, policies</li>
+                        <li class="flex gap-2"><span class="text-forest-400 font-bold">✓</span> Quarterly planning &amp; projections</li>
+                        <li class="flex gap-2"><span class="text-forest-400 font-bold">✓</span> Priority response</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="text-xs text-stone-500 mt-6 max-w-4xl">*Retainers are 12-month engagements. Your business tax return (Form 1120-S or 1065; for sole proprietors, your Schedule C) is included with your retainer; if service ends before 12 months, the return is billed at our standard rate. &ldquo;From&rdquo; prices depend on transaction volume and number of accounts &mdash; we'll confirm your flat monthly rate before you start.</p>
+        </div>
+    </section>
+
+    <!-- Payroll -->
+    <section id="payroll" class="py-14 bg-white border-t border-stone-200 scroll-mt-4">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <p class="text-xs font-bold text-forest-600 tracking-widest uppercase mb-2">Payroll</p>
+                <h2 class="text-3xl font-bold text-navy-900">Small-business payroll, flat rate.</h2>
+                <p class="text-stone-500 mt-2">Add to any retainer, or use on its own.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="rounded-xl border-2 border-stone-200 p-6">
+                    <h3 class="text-xl font-bold text-navy-900">Payroll Starter</h3>
+                    <p class="text-sm text-stone-500">Up to 5 employees</p>
+                    <p class="my-4"><span class="text-4xl font-extrabold text-navy-900">$125</span><span class="text-stone-500">/mo</span></p>
+                </div>
+                <div class="rounded-xl border-2 border-stone-200 p-6">
+                    <h3 class="text-xl font-bold text-navy-900">Payroll Plus</h3>
+                    <p class="text-sm text-stone-500">Up to 10 employees</p>
+                    <p class="my-4"><span class="text-4xl font-extrabold text-navy-900">$200</span><span class="text-stone-500">/mo</span></p>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto mt-6 bg-stone-50 rounded-xl border border-stone-200 p-6">
+                <p class="text-sm font-semibold text-navy-900 mb-3">Both plans include:</p>
+                <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-stone-600">
+                    <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Unlimited scheduled payroll runs</li>
+                    <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Multi-state payroll</li>
+                    <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Federal &amp; NJ payroll filings (941, 940, NJ-927, WR-30)</li>
+                    <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Year-end W-2s</li>
+                    <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Up to 5 contractor 1099s</li>
+                    <li class="flex gap-2"><span class="text-forest-600 font-bold">✓</span> Reasonable off-cycle runs (bonuses, final checks)</li>
+                </ul>
+                <div class="mt-5 pt-4 border-t border-stone-200 text-xs text-stone-500 space-y-1">
+                    <p><strong class="text-stone-700">Setup:</strong> $150 one-time &mdash; employee paperwork, new-hire reporting, state accounts, and loading year-to-date wages if you switch mid-year.</p>
+                    <p><strong class="text-stone-700">11+ employees:</strong> custom quote. <strong class="text-stone-700">New state registrations:</strong> quoted separately.</p>
+                    <p><strong class="text-stone-700">Direct deposit:</strong> available; processing fees billed separately.</p>
+                    <p>Payroll taxes are paid from your business account &mdash; we never hold your funds. Corrections caused by late or changed information are billed separately.</p>
+                </div>
+            </div>
+
+            <!-- Standalone -->
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-10">
+                <div class="rounded-xl border border-stone-200 p-6">
+                    <h3 class="font-bold text-navy-900">1099 Filing</h3>
+                    <p class="text-sm text-stone-600 mt-1">For businesses that pay contractors. Includes W-9 collection and e-filing with the IRS.</p>
+                    <p class="text-2xl font-bold text-navy-900 mt-4">$75 <span class="text-sm font-normal text-stone-500">up to 5 forms, then $10 each</span></p>
+                </div>
+                <div class="rounded-xl border border-stone-200 p-6">
+                    <h3 class="font-bold text-navy-900">Year-End Payroll Wrap-Up</h3>
+                    <p class="text-sm text-stone-600 mt-1">Ran payroll yourself? We'll reconcile the year and prepare your W-2s and W-3.</p>
+                    <p class="text-2xl font-bold text-navy-900 mt-4">From $200</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- One-time projects -->
+    <section id="projects" class="py-14 bg-stone-50 border-t border-stone-200 scroll-mt-4">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <p class="text-xs font-bold text-forest-600 tracking-widest uppercase mb-2">One-Time Projects</p>
+                <h2 class="text-3xl font-bold text-navy-900">Get caught up. Get set up.</h2>
+                <p class="text-stone-500 mt-2">Flat project quotes after a free review of where things stand.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl border border-stone-200 p-6">
+                    <h3 class="font-bold text-navy-900">Cleanup &amp; Catch-Up</h3>
+                    <p class="text-sm text-stone-600 mt-2">Behind on your books, or self-employed with records that aren't tax-ready? We'll categorize, reconcile, and produce a clean profit &amp; loss &mdash; priced per month of history.</p>
+                </div>
+                <div class="bg-white rounded-xl border border-stone-200 p-6">
+                    <h3 class="font-bold text-navy-900">New Business Setup</h3>
+                    <p class="text-sm text-stone-600 mt-2">Chart of accounts, bookkeeping system, and payroll registration &mdash; so you start clean from day one.</p>
+                </div>
+                <div class="bg-white rounded-xl border border-stone-200 p-6">
+                    <h3 class="font-bold text-navy-900">Entity &amp; S-Corp Review</h3>
+                    <p class="text-sm text-stone-600 mt-2">Is an S-corp election worth it for you? We'll run the numbers on reasonable salary, payroll costs, and tax savings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-navy-900 text-white">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-3">Let's see what fits your business.</h2>
+            <p class="text-stone-300 mb-8">Tell us a little about your business and we'll schedule a 15-minute call to recommend a plan and confirm your price.</p>
+            <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="inline-block bg-forest-600 hover:bg-forest-700 font-bold py-3 px-8 rounded shadow-lg transition">Start Your Intake Form</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 text-stone-400 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <p class="text-white font-bold text-lg">Hennig Financial LLC</p>
+                <p class="mt-1">Tax, Accounting &amp; HR for individuals and small businesses.</p>
+                <p class="mt-3 text-xs">IRS Annual Filing Season Program &ndash; Record of Completion (2027 filing season)</p>
+            </div>
+            <div class="flex flex-col gap-2">
+                <a href="index.html#tax" class="hover:text-white transition">Tax Preparation</a>
+                <a href="accounting.html" class="hover:text-white transition">Accounting &amp; Payroll</a>
+                <a href="about.html" class="hover:text-white transition">About</a>
+                <a href="resources.html" class="hover:text-white transition">FAQ</a>
+                <a href="referral-program.html" class="hover:text-white transition">Referral Program</a>
+            </div>
+            <div>
+                <a href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener" class="inline-block bg-forest-600 hover:bg-forest-700 text-white font-semibold px-5 py-2 rounded transition">Get Started</a>
+                <p class="mt-3">Questions? <span class="text-stone-300">ron@hennigfinancial.com</span></p>
+            </div>
+        </div>
+        <div class="border-t border-navy-900">
+            <div class="max-w-6xl mx-auto px-4 py-6 text-xs text-stone-500 space-y-2 text-center">
+                <p>Hennig Financial LLC is not a CPA firm and is not a law firm. We do not provide legal services, audit or attest services, or unlimited representation before the IRS.</p>
+                <p>&copy; 2026 Hennig Financial LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
